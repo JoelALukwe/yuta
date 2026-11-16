@@ -61,3 +61,23 @@
 @media(max-width:800px){.step-layout{grid-template-columns:minmax(0,1fr)!important}.step-tabs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}.step-tabs .step-tab{padding:13px!important;font-size:.9rem!important}}
 @media(max-width:520px){.step-tabs{grid-template-columns:minmax(0,1fr)!important}.step-panel{padding:24px!important}}
 @media(prefers-reduced-motion:reduce){.step-tabs .step-tab{transition:none!important}.step-tabs .step-tab:hover{transform:none!important}}
+
+/* Animated SmartPath methodology: responsive stage illustration and playback */
+.step-panel{display:block!important;position:relative!important;overflow:hidden!important}
+.step-panel .journey-illustration{float:right;width:min(42%,300px);margin:0 0 14px 24px;opacity:.76;filter:drop-shadow(0 12px 24px rgba(40,170,165,.13));animation:journey-float 5s ease-in-out infinite}
+.step-panel .journey-illustration svg{width:100%;height:auto;display:block}
+.step-panel .journey-copy{position:relative;z-index:1}
+.step-panel .journey-copy h4{color:var(--accent-primary);margin:0 0 14px;font-size:1.1rem}
+.step-panel .journey-copy p{line-height:1.75}
+.step-panel.journey-enter .journey-copy{animation:journey-appear .45s ease both}
+.journey-controls{grid-column:2;display:flex;align-items:center;gap:15px;flex-wrap:wrap;margin-top:-6px}
+.journey-play{border:1px solid var(--border-subtle);background:var(--bg-surface);color:var(--text-primary);border-radius:99px;padding:9px 16px;cursor:pointer;font:inherit;font-weight:650}
+.journey-play:hover,.journey-play:focus-visible{border-color:var(--accent-primary);color:var(--accent-primary)}
+.journey-counter{font-weight:750;color:var(--text-secondary)}
+.journey-progress{height:5px;background:var(--accent-soft);border-radius:20px;flex:1;min-width:90px;overflow:hidden}
+.journey-progress span{display:block;height:100%;background:var(--accent-primary);border-radius:20px;transition:width .5s ease}
+@keyframes journey-float{50%{transform:translateY(-9px)}}
+@keyframes journey-appear{from{opacity:.25;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:800px){.journey-controls{grid-column:1}}
+@media(max-width:560px){.step-panel .journey-illustration{float:none;width:100%;max-width:230px;margin:0 auto 14px}}
+@media(prefers-reduced-motion:reduce){.step-panel .journey-illustration,.step-panel.journey-enter .journey-copy{animation:none!important}.journey-progress span{transition:none}}
