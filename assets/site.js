@@ -75,3 +75,6 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 
 document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('a.smartpath-admin-entry').forEach(a=>{a.href='/admin.html';a.setAttribute('aria-label','Open SmartPath content administration');});});
+
+/* Progressive, accessible motion; never hide content without observer support */
+document.addEventListener('DOMContentLoaded',()=>{if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const targets=document.querySelectorAll('.section-heading,.people-card,.partner-showcase-card,.person,.profile-feature,.location-card');const obs=new IntersectionObserver(entries=>{for(const e of entries){if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target)}}},{threshold:.08,rootMargin:'0px 0px -25px 0px'});targets.forEach(el=>{el.classList.add('reveal-on-scroll');obs.observe(el)})});
