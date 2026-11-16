@@ -70,3 +70,13 @@
 .team-grid>.person>.person-info h3{min-height:2.6em!important}
 @media(max-width:850px){.team-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.team-grid>.person>.founder-photo-frame{height:380px!important;min-height:380px!important;max-height:380px!important;flex-basis:380px!important}}
 @media(max-width:550px){.team-grid{grid-template-columns:1fr!important}.team-grid>.person>.founder-photo-frame{height:420px!important;min-height:420px!important;max-height:420px!important;flex-basis:420px!important}.team-grid>.person>.person-info h3{min-height:0!important}}
+
+/* FINAL founder alignment: consistent visible photograph area, including landscape source */
+.team-grid>.person>.founder-photo-frame{height:390px!important;min-height:390px!important;max-height:390px!important;flex:0 0 390px!important;aspect-ratio:auto!important;display:block!important;overflow:hidden!important;background:#243846!important;border-radius:14px 14px 0 0!important}
+.team-grid>.person>.founder-photo-frame>img.portrait-complete{display:block!important;width:100%!important;height:390px!important;min-height:390px!important;max-height:390px!important;max-width:none!important;object-fit:cover!important;object-position:center 30%!important;aspect-ratio:auto!important}
+.team-grid>.person:nth-child(1)>.founder-photo-frame>img{object-position:center 34%!important}
+.team-grid>.person:nth-child(2)>.founder-photo-frame>img{object-position:center 29%!important}
+.team-grid>.person:nth-child(3)>.founder-photo-frame>img{object-position:center 30%!important}
+.team-grid>.person>.person-info{padding-top:15px!important}
+@media(max-width:850px){.team-grid>.person>.founder-photo-frame{height:360px!important;min-height:360px!important;max-height:360px!important;flex-basis:360px!important}.team-grid>.person>.founder-photo-frame>img.portrait-complete{height:360px!important;min-height:360px!important;max-height:360px!important}}
+@media(max-width:550px){.team-grid>.person>.founder-photo-frame{height:420px!important;min-height:420px!important;max-height:420px!important;flex-basis:420px!important}.team-grid>.person>.founder-photo-frame>img.portrait-complete{height:420px!important;min-height:420px!important;max-height:420px!important}}
