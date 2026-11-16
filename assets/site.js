@@ -81,3 +81,14 @@ document.addEventListener('DOMContentLoaded',()=>{if(!('IntersectionObserver' in
 
 /* Motion enhancement: subtle cursor-follow highlight on cards */
 document.addEventListener('DOMContentLoaded',()=>{if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||window.matchMedia('(pointer: coarse)').matches)return;document.querySelectorAll('.people-card,.partner-showcase-card').forEach(card=>{card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect();card.style.setProperty('--pointer-x',((e.clientX-r.left)/r.width*100)+'%');card.style.setProperty('--pointer-y',((e.clientY-r.top)/r.height*100)+'%')});card.addEventListener('pointerleave',()=>{card.style.removeProperty('--pointer-x');card.style.removeProperty('--pointer-y')})})});
+
+/* Shared SmartPath visual experience */
+document.addEventListener('DOMContentLoaded',()=>{
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const icons={community:'♧',science:'⚗',technology:'⌘',care:'♡',pathway:'◇',evidence:'▥',school:'⌂'};
+ const kind=t=>/school|teen|girl|adolesc/i.test(t)?'school':/community|partner|people|outreach/i.test(t)?'community':/science|research|diagnos|ferritin/i.test(t)?'science':/technology|data|digital/i.test(t)?'technology':/impact|evidence|measure/i.test(t)?'evidence':/care|treat|iron|maternal/i.test(t)?'care':'pathway';
+ document.querySelectorAll('main .card-grid>.card').forEach(card=>{if(card.querySelector('.card-icon,img')||card.closest('.partner-directory,[data-cms-partners]'))return;const h=card.querySelector('h2,h3');if(!h)return;card.classList.add('experience-card');const i=document.createElement('span');i.className='experience-glyph';i.setAttribute('aria-hidden','true');i.textContent=icons[kind(h.textContent)];card.prepend(i)});
+ document.querySelectorAll('main .section-heading').forEach(h=>{const i=document.createElement('span');i.className='heading-glyph';i.setAttribute('aria-hidden','true');i.textContent=icons[kind(h.textContent)];h.classList.add('experience-heading');h.append(i)});
+ if(!reduce&&'IntersectionObserver'in window){const ob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('experience-visible');ob.unobserve(e.target)}}),{threshold:.06,rootMargin:'0px 0px 45px 0px'});document.querySelectorAll('main .section-heading,main .card,main .person,main .location-card').forEach(el=>{el.classList.add('experience-reveal');ob.observe(el)})}
+ if(document.body.classList.contains('iron-identity')){const hero=document.querySelector('main .hero-copy');if(hero){const im=document.createElement('img');im.src='/assets/partners/iron-it-out.png';im.alt='Iron It Out campaign logo';im.className='iron-campaign-mark';hero.prepend(im)}}
+});
