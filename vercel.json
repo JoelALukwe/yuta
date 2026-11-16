@@ -1,0 +1,31 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/ironitout",
+      "destination": "/iron-it-out",
+      "permanent": true
+    },
+    {
+      "source": "/community",
+      "destination": "/where-we-work",
+      "permanent": true
+    },
+    {
+      "source": "/team",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/gallery",
+      "destination": "/stories",
+      "permanent": true
+    },
+    {
+      "source": "/maternal-anemia",
+      "destination": "/paths/maternal-anaemia",
+      "permanent": true
+    }
+  ]
+}
