@@ -1,0 +1,1 @@
+const {auth,fail}=require('./_github');module.exports=(req,res)=>{if(req.method!=='POST')return res.status(405).end();try{auth(req);return res.status(200).json({ok:true})}catch(e){return fail(res,e)}};
