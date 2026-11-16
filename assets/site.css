@@ -32,3 +32,15 @@
 .contact-form button[type=submit]{justify-self:start}
 .contact-form #form-feedback{margin:0}
 @media(max-width:700px){.contact-form .form-row{grid-template-columns:minmax(0,1fr);gap:20px}.about-team-photo-hero::before{background-position:56% center}.about-team-photo-hero::after{background:linear-gradient(90deg,rgba(5,22,33,.89),rgba(5,22,33,.7))}}
+
+/* Photographic partner hero: actual team photo with readable translucent overlay */
+.partner-team-photo-hero{position:relative!important;isolation:isolate!important;overflow:hidden!important;background:#102b37!important}
+.partner-team-photo-hero::before{content:"";position:absolute;inset:0;z-index:0;background-image:url("/assets/whole-team.jpg");background-size:cover;background-position:center 45%;background-repeat:no-repeat}
+.partner-team-photo-hero::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(7,27,39,.91) 0%,rgba(7,27,39,.78) 43%,rgba(7,27,39,.43) 100%)}
+.partner-team-photo-hero>.hero-grid,.about-team-photo-hero>.hero-grid{position:relative!important;z-index:1!important}
+.partner-team-photo-hero .hero-copy h1,.partner-team-photo-hero .hero-copy p,.partner-team-photo-hero .hero-copy .eyebrow{color:#f5fbfd!important}
+.partner-team-photo-hero .hero-copy h1 em{color:#7cdbd5!important}
+.partner-team-photo-hero .hero-art{background:rgba(8,28,40,.22)!important;backdrop-filter:blur(4px);border-color:rgba(220,250,250,.22)!important}
+.about-team-photo-hero::before{z-index:0!important}
+.about-team-photo-hero::after{z-index:0!important}
+@media(max-width:700px){.partner-team-photo-hero::before{background-position:57% center}.partner-team-photo-hero::after{background:rgba(7,27,39,.77)}}
