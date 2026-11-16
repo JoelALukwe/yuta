@@ -127,10 +127,10 @@
     },
     {
       "name": "Kawangware, Nairobi",
-      "status": "exploratory",
+      "status": "planned",
       "lat": -1.283,
       "lon": 36.752,
-      "description": "Exploratory school and community engagement for Iron It Out."
+      "description": "Planned school and community engagement for Iron It Out."
     },
     {
       "name": "Kisumu / Nyanza",
@@ -152,6 +152,20 @@
       "lat": -33.933,
       "lon": 18.861,
       "description": "Development origin linked to the African STARS programme."
+    },
+    {
+      "name": "Freetown, Sierra Leone (country exploration)",
+      "status": "exploratory",
+      "lat": 8.4657,
+      "lon": -13.2317,
+      "description": "Exploratory country-level interest only; indicative city marker, not a confirmed site."
+    },
+    {
+      "name": "Lagos, Nigeria (country exploration)",
+      "status": "exploratory",
+      "lat": 6.5244,
+      "lon": 3.3792,
+      "description": "Exploratory country-level interest only; indicative city marker, not a confirmed site."
     }
   ],
   "gallery": [],
