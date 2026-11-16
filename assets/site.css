@@ -80,3 +80,13 @@
 .team-grid>.person>.person-info{padding-top:15px!important}
 @media(max-width:850px){.team-grid>.person>.founder-photo-frame{height:360px!important;min-height:360px!important;max-height:360px!important;flex-basis:360px!important}.team-grid>.person>.founder-photo-frame>img.portrait-complete{height:360px!important;min-height:360px!important;max-height:360px!important}}
 @media(max-width:550px){.team-grid>.person>.founder-photo-frame{height:420px!important;min-height:420px!important;max-height:420px!important;flex-basis:420px!important}.team-grid>.person>.founder-photo-frame>img.portrait-complete{height:420px!important;min-height:420px!important;max-height:420px!important}}
+
+/* About hero: founding team photograph, cinematic dark overlay for legible text */
+.about-team-photo-hero{position:relative;isolation:isolate;background:#102632!important;overflow:hidden}
+.about-team-photo-hero::before{content:"";position:absolute;inset:0;z-index:-2;background-image:url("/assets/founding-team.jpg");background-position:center 46%;background-size:cover;background-repeat:no-repeat}
+.about-team-photo-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(7,24,36,.94) 0%,rgba(7,24,36,.82) 38%,rgba(7,24,36,.56) 69%,rgba(7,24,36,.55) 100%)}
+.about-team-photo-hero .hero-copy{position:relative;z-index:1}
+.about-team-photo-hero .hero-copy h1,.about-team-photo-hero .hero-copy p,.about-team-photo-hero .hero-copy .eyebrow{color:#f0f7fa!important}
+.about-team-photo-hero .hero-copy h1 em{color:#80d8d5!important}
+.about-team-photo-hero .hero-art{background:rgba(12,31,45,.22);border-radius:24px;backdrop-filter:blur(2px)}
+@media(max-width:760px){.about-team-photo-hero::before{background-position:58% center}.about-team-photo-hero::after{background:linear-gradient(90deg,rgba(7,24,36,.9),rgba(7,24,36,.7))}.about-team-photo-hero .hero-art{display:none}}
