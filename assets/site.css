@@ -81,3 +81,11 @@
 @media(max-width:800px){.journey-controls{grid-column:1}}
 @media(max-width:560px){.step-panel .journey-illustration{float:none;width:100%;max-width:230px;margin:0 auto 14px}}
 @media(prefers-reduced-motion:reduce){.step-panel .journey-illustration,.step-panel.journey-enter .journey-copy{animation:none!important}.journey-progress span{transition:none}}
+
+/* Illustrated content cards across SmartPath pages. Partner logos and team portraits are preserved. */
+.smartpath-illustrated-card{position:relative;overflow:hidden;isolation:isolate;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.smartpath-illustrated-card:hover{transform:translateY(-5px);border-color:var(--accent-primary);box-shadow:0 20px 45px rgba(0,120,125,.13)}
+.smartpath-card-art{height:112px;display:flex;align-items:center;justify-content:flex-end;margin:-8px -4px 14px 0;opacity:.78;pointer-events:none}
+.smartpath-card-art svg{height:110px;width:145px;max-width:100%;filter:drop-shadow(0 9px 15px rgba(13,125,127,.12));transition:transform .4s ease,opacity .4s ease}
+.smartpath-illustrated-card:hover .smartpath-card-art svg{transform:translateY(-5px) scale(1.045);opacity:1}
+@media(prefers-reduced-motion:reduce){.smartpath-illustrated-card,.smartpath-card-art svg{transition:none!important}}
