@@ -1,0 +1,162 @@
+{
+  "site": {
+    "name": "SmartPath",
+    "tagline": "One Path. Connected Care.",
+    "description": "Organizing fragmented care pathways into connected, accountable care.",
+    "base": "South Africa"
+  },
+  "maternalPath": {
+    "name": "Maternal Anaemia",
+    "stages": [
+      "Iron It Out",
+      "Detect Early",
+      "Treat + Follow Up",
+      "Escalate + Close"
+    ]
+  },
+  "partners": [
+    {
+      "name": "Sight and Life",
+      "status": "Referenced in ecosystem materials — relationship to verify",
+      "description": "Relationship stage and public brand permissions require confirmation before describing this organisation as a formal SmartPath partner."
+    },
+    {
+      "name": "Stellenbosch University",
+      "status": "Programme and academic ecosystem",
+      "description": "Relationship stage and public brand permissions require confirmation before describing this organisation as a formal SmartPath partner."
+    },
+    {
+      "name": "RFHA",
+      "status": "Engagement and collaboration discussions",
+      "description": "Relationship stage and public brand permissions require confirmation before describing this organisation as a formal SmartPath partner."
+    },
+    {
+      "name": "Malaica",
+      "status": "Pathway design discussions",
+      "description": "Relationship stage and public brand permissions require confirmation before describing this organisation as a formal SmartPath partner."
+    },
+    {
+      "name": "Small Projects Foundation",
+      "status": "Referenced in ecosystem materials — relationship to verify",
+      "description": "Relationship stage and public brand permissions require confirmation before describing this organisation as a formal SmartPath partner."
+    },
+    {
+      "name": "The Impilo Project",
+      "status": "Community health-day context",
+      "description": "Relationship stage and public brand permissions require confirmation before describing this organisation as a formal SmartPath partner."
+    },
+    {
+      "name": "CSL Vifor",
+      "status": "Referenced in ecosystem materials — relationship to verify",
+      "description": "Relationship stage and public brand permissions require confirmation before describing this organisation as a formal SmartPath partner."
+    },
+    {
+      "name": "Cape Town Infusion Centre",
+      "status": "Referenced in ecosystem materials — relationship to verify",
+      "description": "Relationship stage and public brand permissions require confirmation before describing this organisation as a formal SmartPath partner."
+    },
+    {
+      "name": "Katalitix",
+      "status": "Referenced in ecosystem materials — relationship to verify",
+      "description": "Relationship stage and public brand permissions require confirmation before describing this organisation as a formal SmartPath partner."
+    },
+    {
+      "name": "Novex Pharmaceuticals",
+      "status": "Referenced in ecosystem materials — relationship to verify",
+      "description": "Relationship stage and public brand permissions require confirmation before describing this organisation as a formal SmartPath partner."
+    },
+    {
+      "name": "Arcera Life Sciences",
+      "status": "Referenced in ecosystem materials — relationship to verify",
+      "description": "Relationship stage and public brand permissions require confirmation before describing this organisation as a formal SmartPath partner."
+    },
+    {
+      "name": "The Lens Nairobi",
+      "status": "Referenced in ecosystem materials — relationship to verify",
+      "description": "Relationship stage and public brand permissions require confirmation before describing this organisation as a formal SmartPath partner."
+    },
+    {
+      "name": "BE PART",
+      "status": "Referenced in ecosystem materials — relationship to verify",
+      "description": "Relationship stage and public brand permissions require confirmation before describing this organisation as a formal SmartPath partner."
+    },
+    {
+      "name": "mothers2mothers",
+      "status": "Referenced in ecosystem materials — relationship to verify",
+      "description": "Relationship stage and public brand permissions require confirmation before describing this organisation as a formal SmartPath partner."
+    },
+    {
+      "name": "Aspen Pharmacare",
+      "status": "Referenced in ecosystem materials — relationship to verify",
+      "description": "Relationship stage and public brand permissions require confirmation before describing this organisation as a formal SmartPath partner."
+    },
+    {
+      "name": "Western Cape Department of Health",
+      "status": "Government ecosystem; specific relationship to verify",
+      "description": "Relationship stage and public brand permissions require confirmation before describing this organisation as a formal SmartPath partner."
+    }
+  ],
+  "locations": [
+    {
+      "name": "Joe Slovo, Cape Town",
+      "status": "completed",
+      "lat": -33.86,
+      "lon": 18.58,
+      "description": "Community health-day engagement; event attendance and screening figures must be distinguished."
+    },
+    {
+      "name": "Marula, Limpopo",
+      "status": "completed",
+      "lat": -23.9,
+      "lon": 30.1,
+      "description": "RFHA community health days in October 2026; SmartPath-specific reach is not independently verified."
+    },
+    {
+      "name": "Worcester, Western Cape",
+      "status": "planned",
+      "lat": -33.646,
+      "lon": 19.448,
+      "description": "Proposed maternal anaemia demonstration; implementation subject to local approval."
+    },
+    {
+      "name": "Buffalo City, Eastern Cape",
+      "status": "exploratory",
+      "lat": -32.98,
+      "lon": 27.9,
+      "description": "Early-stage implementation and community collaboration discussions."
+    },
+    {
+      "name": "Kawangware, Nairobi",
+      "status": "exploratory",
+      "lat": -1.283,
+      "lon": 36.752,
+      "description": "Exploratory school and community engagement for Iron It Out."
+    },
+    {
+      "name": "Kisumu / Nyanza",
+      "status": "planned",
+      "lat": -0.1,
+      "lon": 34.75,
+      "description": "Potential future expansion; no completed implementation claimed."
+    },
+    {
+      "name": "Mombasa / Coast",
+      "status": "planned",
+      "lat": -4.043,
+      "lon": 39.668,
+      "description": "Potential future expansion; no completed implementation claimed."
+    },
+    {
+      "name": "Stellenbosch",
+      "status": "origin",
+      "lat": -33.933,
+      "lon": 18.861,
+      "description": "Development origin linked to the African STARS programme."
+    }
+  ],
+  "gallery": [],
+  "ironGallery": [],
+  "stories": [],
+  "press": [],
+  "reports": []
+}
