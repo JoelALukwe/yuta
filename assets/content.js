@@ -9,7 +9,7 @@ async function init(){let data;try{const r=await fetch('/content/site.json',{cac
 const partners=document.querySelector('[data-cms-partners]');if(partners&&Array.isArray(data.partners)&&data.partners.length)partners.replaceChildren(...data.partners.map(cardPartner));
 const loc=document.querySelector('[data-cms-locations]');if(loc&&Array.isArray(data.locations)){const nodes=data.locations.map(cardLocation).filter(Boolean);if(nodes.length){loc.replaceChildren(...nodes);window.dispatchEvent(new Event('smartpath:locations-updated'));}}
 const stories=document.querySelector('[data-cms-stories]');if(stories&&Array.isArray(data.stories)&&data.stories.length)stories.replaceChildren(...data.stories.map(cardStory));
-const galleryTarget=document.querySelector('[data-cms-gallery]');if(galleryTarget&&Array.isArray(data.gallery)&&data.gallery.length)galleryTarget.replaceChildren(...data.gallery.map(gallery));
+const galleryTarget=document.querySelector('[data-cms-gallery]');if(galleryTarget&&Array.isArray(data.gallery)&&data.gallery.length){galleryTarget.replaceChildren(...data.gallery.map(gallery));window.dispatchEvent(new Event('smartpath:gallery-updated'));}
 const ironGallery=document.querySelector('[data-cms-iron-gallery]');if(ironGallery&&Array.isArray(data.ironGallery)&&data.ironGallery.length)ironGallery.replaceChildren(...data.ironGallery.map(gallery));
 }
 document.addEventListener('DOMContentLoaded',init);
