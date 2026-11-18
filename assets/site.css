@@ -364,3 +364,22 @@
 .filter-btn[data-filter="completed"].active{background:var(--sp-completed);border-color:var(--sp-completed);color:white}
 .filter-btn[data-filter="planned"].active{background:var(--sp-planned);border-color:var(--sp-planned);color:#14242d}
 .filter-btn[data-filter="exploratory"].active{background:var(--sp-exploratory);border-color:var(--sp-exploratory);color:white}
+
+/* Iron It Out: a distinctive red-and-blue campaign, visibly within SmartPath */
+body.iron-campaign{--iron-red:#f02222;--iron-navy:#063f75;--iron-blue:#64b9f2;--iron-ink:#071b32;--iron-sky:#eaf6ff;--accent:var(--iron-red);--accent-strong:#c91b22;--accent-soft:#ffe7e6}
+.iron-campaign .hero{background:radial-gradient(ellipse at 82% 30%,rgba(76,166,231,.25),transparent 45%),linear-gradient(125deg,#071b32 5%,#083a69 63%,#0d5d98 100%);color:#fff;position:relative;overflow:hidden}
+.iron-campaign .hero:before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(120deg,transparent 0 110px,rgba(255,255,255,.025) 111px 113px)}
+.iron-campaign .hero-copy,.iron-campaign .hero-art{position:relative;z-index:1}
+.iron-campaign .hero h1{color:white}.iron-campaign .hero h1 em{color:#8ad3ff}.iron-campaign .hero p{color:#e2f1fc}
+.iron-campaign .hero .eyebrow{color:#ff9e98;letter-spacing:.17em}
+.iron-campaign .hero .btn,.iron-campaign .section .btn{background:var(--iron-red);border-color:var(--iron-red);color:white}
+.iron-campaign .hero .btn:hover,.iron-campaign .section .btn:hover{background:#c91b22;border-color:#c91b22;transform:translateY(-2px)}
+.iron-campaign .hero-art{border-color:rgba(130,207,255,.35)}.iron-campaign .hero-art .art-orbit{border-color:#81c9f4;color:#81c9f4}.iron-campaign .art-node{border-color:#6ab8eb;color:#fff;background:#103a60}
+.iron-campaign .section .eyebrow{color:#dc3238}.iron-campaign .section.tinted{background:linear-gradient(140deg,#eaf6ff,#fff1f0)}
+.iron-campaign .card{border-color:rgba(30,102,161,.23)}.iron-campaign .card:hover{border-color:var(--iron-red);box-shadow:0 18px 40px rgba(13,72,125,.12)}
+.iron-campaign .card-icon{color:var(--iron-red);background:rgba(240,34,34,.09)}
+.iron-campaign .profile-feature{border-color:rgba(30,102,161,.22)}
+.iron-wordmark{display:flex;flex-wrap:wrap;align-items:baseline;gap:.18em;margin:1.2rem 0 .5rem;font-weight:1000;font-size:clamp(3.5rem,8vw,7rem);line-height:.85;letter-spacing:-.07em;filter:drop-shadow(0 7px 0 rgba(0,0,0,.2));transform:rotate(-1deg)}
+.iron-wordmark span:first-child{color:#ff3333;text-shadow:0 2px #a50816,0 5px #740d15}.iron-wordmark span:nth-child(2){color:#1978c7;text-shadow:0 2px #06395e,0 5px #03243c}.iron-wordmark span:last-child{color:#80d0ff;text-shadow:0 2px #2875af,0 5px #084d85}
+@media(max-width:680px){.iron-wordmark{font-size:clamp(3rem,13vw,5rem);gap:.12em}.iron-campaign .hero{background:linear-gradient(150deg,#071b32,#0b5388)}}
+@media(prefers-reduced-motion:reduce){.iron-campaign .btn{transition:none}}
