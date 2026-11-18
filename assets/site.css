@@ -327,3 +327,22 @@
 .location-card{transition:border-color .3s,box-shadow .3s,transform .3s}
 .location-card:hover,.location-card:focus-visible,.location-card.sp-location-selected{border-color:#71c9c8;box-shadow:0 15px 30px rgba(24,123,126,.16);transform:translateY(-3px)}
 @media(prefers-reduced-motion:reduce){.sp-pathway-journey>.card,.location-card{transition:none!important;transform:none!important}}
+
+/* 2026-11-18: restore full Leaflet tile canvas; prevent site-wide img rules from shrinking tiles */
+.map-shell{position:relative;isolation:isolate;min-width:0;overflow:hidden}
+.map-shell #smartpath-map{position:relative;display:block;width:100%;height:500px;min-height:500px;overflow:hidden;z-index:0;background:#cbdde0}
+#smartpath-map .leaflet-container,#smartpath-map .leaflet-map-pane,#smartpath-map .leaflet-tile-pane{max-width:none!important}
+#smartpath-map img.leaflet-tile{max-width:none!important;max-height:none!important;width:256px!important;height:256px!important;object-fit:fill!important;aspect-ratio:auto!important;border-radius:0!important;box-shadow:none!important}
+#smartpath-map .leaflet-control-container{position:relative;z-index:900}
+#smartpath-map .map-fallback{display:none!important}
+@media(max-width:850px){.map-shell #smartpath-map{height:420px;min-height:420px}}@media(max-width:550px){.map-shell #smartpath-map{height:350px;min-height:350px}}
+/* Gallery: consistent edge-to-edge image tiles, no mosaic collisions, full photo in viewer */
+#community-gallery .sp-gallery-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:clamp(12px,1.4vw,20px)!important;align-items:stretch!important;perspective:none!important}
+#community-gallery .sp-gallery-tile,#community-gallery .sp-gallery-tile:nth-child(7n + 1),#community-gallery .sp-gallery-tile:nth-child(7n + 4){grid-column:auto!important;grid-row:auto!important;aspect-ratio:4/3!important;min-width:0!important;width:100%!important;height:auto!important;max-height:none!important;transform:none!important;overflow:hidden!important}
+#community-gallery .sp-gallery-tile img{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;aspect-ratio:auto!important;object-fit:cover!important;object-position:center center!important;transform:none!important}
+#community-gallery .sp-gallery-tile:hover,#community-gallery .sp-gallery-tile:focus-visible{transform:translateY(-4px)!important}
+#community-gallery .sp-gallery-tile:hover img,#community-gallery .sp-gallery-tile:focus-visible img{transform:scale(1.025)!important}
+.sp-gallery-viewer figure img{width:auto!important;height:auto!important;max-width:100%!important;max-height:calc(100dvh - 160px)!important;object-fit:contain!important}
+@media(max-width:900px){#community-gallery .sp-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:580px){#community-gallery .sp-gallery-grid{grid-template-columns:1fr!important}#community-gallery .sp-gallery-tile{aspect-ratio:4/3!important}}
+@media(prefers-reduced-motion:reduce){#community-gallery .sp-gallery-tile,#community-gallery .sp-gallery-tile img{transition:none!important}}
