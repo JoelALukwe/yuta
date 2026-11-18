@@ -15,5 +15,5 @@ modal.querySelector('.sp-viewer-close').addEventListener('click',()=>modal.close
 modal.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();show(current+1);}if(e.key==='ArrowLeft'){e.preventDefault();show(current-1);}});
 modal.addEventListener('click',e=>{if(e.target===modal)modal.close();});modal.addEventListener('close',()=>lastFocus?.focus?.());
 let touchX=null;modal.addEventListener('touchstart',e=>{touchX=e.changedTouches[0]?.screenX??null},{passive:true});modal.addEventListener('touchend',e=>{if(touchX===null)return;const d=(e.changedTouches[0]?.screenX??touchX)-touchX;if(Math.abs(d)>55)show(current+(d<0?1:-1));touchX=null},{passive:true});
-document.addEventListener('DOMContentLoaded',refresh);
+document.addEventListener('DOMContentLoaded',refresh);window.addEventListener('smartpath:gallery-updated',refresh);
 })();
