@@ -116,7 +116,7 @@
 
 /* Our Model: field outreach photo, layered teal scrim, accessible foreground */
 .model-photo-hero{position:relative!important;isolation:isolate;overflow:hidden;background:#102b37!important}
-.model-photo-hero::before{content:"";position:absolute;inset:0;z-index:0;background:url("/assets/our-model-community.jpeg") center 48%/cover no-repeat;opacity:.76}
+.model-photo-hero::before{content:"";position:absolute;inset:0;z-index:0;background:url("/assets/our-model-community") center 48%/cover no-repeat;opacity:.76}
 .model-photo-hero::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(5,22,33,.94) 0%,rgba(5,22,33,.82) 43%,rgba(5,22,33,.48) 100%)}
 .model-photo-hero>.hero-grid{position:relative;z-index:1}
 .model-photo-hero .hero-copy h1,.model-photo-hero .hero-copy p,.model-photo-hero .hero-copy .eyebrow{color:#f4fbfd!important}
