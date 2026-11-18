@@ -137,3 +137,16 @@
 .home-photo-hero .art-node{background:rgba(13,33,45,.82);color:#fff;border-color:rgba(255,255,255,.24)}
 .home-photo-hero .art-label{color:#d7e9ee}
 @media(max-width:700px){.home-photo-hero::before{background-position:60% center}.home-photo-hero::after{background:rgba(5,22,33,.76)}}
+
+
+/* Impact & Evidence: field screening photograph with translucent dark-teal overlay */
+.impact-photo-hero{position:relative!important;isolation:isolate;overflow:hidden;background:#102b37!important}
+.impact-photo-hero::before{content:"";position:absolute;inset:0;z-index:0;background:url("/assets/impact-community-screening") center 50%/cover no-repeat;opacity:.78}
+.impact-photo-hero::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(5,22,33,.94),rgba(5,22,33,.80) 44%,rgba(5,22,33,.48))}
+.impact-photo-hero>.hero-grid{position:relative;z-index:1}
+.impact-photo-hero .hero-copy h1,.impact-photo-hero .hero-copy p,.impact-photo-hero .hero-copy .eyebrow{color:#f4fbfd!important}
+.impact-photo-hero .hero-copy h1 em{color:#80d7d3!important}
+.impact-photo-hero .hero-art{background:rgba(10,29,40,.27);border-color:rgba(255,255,255,.23);backdrop-filter:blur(3px)}
+.impact-photo-hero .art-node{background:rgba(13,33,45,.82);color:#fff;border-color:rgba(255,255,255,.24)}
+.impact-photo-hero .art-label{color:#d7e9ee}
+@media(max-width:700px){.impact-photo-hero::before{background-position:58% center}.impact-photo-hero::after{background:rgba(5,22,33,.77)}}
