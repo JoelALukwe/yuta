@@ -299,3 +299,20 @@
 @media(max-width:900px){#community-gallery .sp-gallery-tile,#community-gallery .sp-gallery-tile:nth-child(7n + 1),#community-gallery .sp-gallery-tile:nth-child(7n + 4){grid-column:span 6;aspect-ratio:4/3}}
 @media(max-width:580px){#community-gallery .sp-gallery-grid{gap:12px}#community-gallery .sp-gallery-tile,#community-gallery .sp-gallery-tile:nth-child(7n + 1),#community-gallery .sp-gallery-tile:nth-child(7n + 4){grid-column:span 12;aspect-ratio:4/3}#community-gallery .sp-gallery-open{opacity:1;transform:none}.sp-gallery-viewer[open]{grid-template-columns:48px minmax(0,1fr) 48px}.sp-viewer-arrow{width:36px;height:36px;font-size:1.7rem}.sp-gallery-viewer figure img{max-height:calc(100dvh - 190px)}}
 @media(prefers-reduced-motion:reduce){#community-gallery .sp-gallery-tile img,#community-gallery .sp-gallery-open{transition:none}}
+
+/* SmartPath immersive gallery — responsive, accessible, motion-aware */
+#community-gallery{position:relative;overflow:hidden;background:radial-gradient(ellipse at 85% 8%,rgba(93,199,194,.13),transparent 45%),var(--bg,#0c1b27)}
+#community-gallery .section-heading h2{font-size:clamp(2.2rem,5vw,4.4rem);letter-spacing:-.045em;line-height:1.06}
+#community-gallery .sp-gallery-grid{perspective:1100px;gap:clamp(12px,1.5vw,22px)}
+#community-gallery .sp-gallery-tile{transform:translateZ(0);transition:transform .5s cubic-bezier(.2,.75,.2,1),box-shadow .5s ease,opacity .6s ease;border:1px solid rgba(123,214,211,.15)}
+#community-gallery .sp-gallery-tile img{will-change:transform;transform:scale(1.005) translate(calc(var(--gx,0)*-5px),calc(var(--gy,0)*-5px));transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .5s}
+#community-gallery .sp-gallery-tile::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(113,207,204,.20),transparent 52%);opacity:0;transition:opacity .4s}
+#community-gallery .sp-gallery-tile:hover,#community-gallery .sp-gallery-tile:focus-visible{transform:translateY(-7px) rotateX(calc(var(--gy,0)*-2deg)) rotateY(calc(var(--gx,0)*2deg));box-shadow:0 26px 55px rgba(0,0,0,.28)}
+#community-gallery .sp-gallery-tile:hover::before,#community-gallery .sp-gallery-tile:focus-visible::before{opacity:1}
+#community-gallery .sp-gallery-tile:hover img,#community-gallery .sp-gallery-tile:focus-visible img{transform:scale(1.075) translate(calc(var(--gx,0)*-8px),calc(var(--gy,0)*-8px))}
+#community-gallery .sp-gallery-tile figcaption{max-width:85%;font-size:clamp(1rem,1.45vw,1.35rem);letter-spacing:-.015em}
+#community-gallery .sp-gallery-tile:nth-child(7n + 1),#community-gallery .sp-gallery-tile:nth-child(7n + 4){aspect-ratio:1.65}
+.sp-gallery-viewer[open]{animation:spViewerAppear .25s ease both}
+@keyframes spViewerAppear{from{opacity:0}to{opacity:1}}
+@media(hover:none){#community-gallery .sp-gallery-tile{transform:none!important}#community-gallery .sp-gallery-tile img{transform:none!important}}
+@media(prefers-reduced-motion:reduce){#community-gallery .sp-gallery-tile,#community-gallery .sp-gallery-tile img,.sp-gallery-viewer[open]{animation:none!important;transition:none!important;transform:none!important}}
