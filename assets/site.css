@@ -125,3 +125,15 @@
 .model-photo-hero .art-node{background:rgba(13,33,45,.82);color:#fff;border-color:rgba(255,255,255,.24)}
 .model-photo-hero .art-label{color:#d7e9ee}
 @media(max-width:700px){.model-photo-hero::before{background-position:58% center}.model-photo-hero::after{background:rgba(5,22,33,.76)}}
+
+/* Home hero: real community gathering photo with translucent brand overlay */
+.home-photo-hero{position:relative!important;isolation:isolate;overflow:hidden;background:#102b37!important}
+.home-photo-hero::before{content:"";position:absolute;inset:0;z-index:0;background-image:url("/assets/home-community-gathering.jpeg");background-position:center 52%;background-size:cover;background-repeat:no-repeat;opacity:.82}
+.home-photo-hero::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(5,22,33,.94) 0%,rgba(5,22,33,.80) 44%,rgba(5,22,33,.46) 100%)}
+.home-photo-hero>.hero-grid{position:relative;z-index:1}
+.home-photo-hero .hero-copy h1,.home-photo-hero .hero-copy p,.home-photo-hero .hero-copy .eyebrow{color:#f4fbfd!important}
+.home-photo-hero .hero-copy h1 em{color:#80d7d3!important}
+.home-photo-hero .hero-art{background:rgba(10,29,40,.29);border-color:rgba(255,255,255,.23);backdrop-filter:blur(3px)}
+.home-photo-hero .art-node{background:rgba(13,33,45,.82);color:#fff;border-color:rgba(255,255,255,.24)}
+.home-photo-hero .art-label{color:#d7e9ee}
+@media(max-width:700px){.home-photo-hero::before{background-position:60% center}.home-photo-hero::after{background:rgba(5,22,33,.76)}}
