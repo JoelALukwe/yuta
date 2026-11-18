@@ -316,3 +316,14 @@
 @keyframes spViewerAppear{from{opacity:0}to{opacity:1}}
 @media(hover:none){#community-gallery .sp-gallery-tile{transform:none!important}#community-gallery .sp-gallery-tile img{transform:none!important}}
 @media(prefers-reduced-motion:reduce){#community-gallery .sp-gallery-tile,#community-gallery .sp-gallery-tile img,.sp-gallery-viewer[open]{animation:none!important;transition:none!important;transform:none!important}}
+
+/* Progressive interactive storytelling — scoped to approved pages */
+@media(prefers-reduced-motion:no-preference){.sp-reveal-ready{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.75,.2,1);transition-delay:var(--sp-delay,0ms)}.sp-reveal-ready.sp-revealed{opacity:1;transform:none}}
+.sp-pathway-journey{position:relative;isolation:isolate}
+.sp-pathway-journey>.card{position:relative;transition:border-color .3s,box-shadow .35s,transform .35s;outline-offset:4px}
+.sp-pathway-journey>.card:hover,.sp-pathway-journey>.card:focus-within,.sp-pathway-journey>.card:focus-visible{transform:translateY(-6px);border-color:#71c9c8;box-shadow:0 18px 40px rgba(19,91,94,.2)}
+.sp-pathway-journey>.card::after{content:attr(data-step);position:absolute;top:12px;right:16px;font-size:2.7rem;font-weight:800;line-height:1;color:rgba(112,203,200,.16);pointer-events:none}
+#smartpath-map{border-radius:18px;overflow:hidden}
+.location-card{transition:border-color .3s,box-shadow .3s,transform .3s}
+.location-card:hover,.location-card:focus-visible,.location-card.sp-location-selected{border-color:#71c9c8;box-shadow:0 15px 30px rgba(24,123,126,.16);transform:translateY(-3px)}
+@media(prefers-reduced-motion:reduce){.sp-pathway-journey>.card,.location-card{transition:none!important;transform:none!important}}
