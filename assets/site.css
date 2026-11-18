@@ -92,7 +92,7 @@
 
 /* Stories & Media: approved field-team photograph with translucent overlay */
 .stories-photo-hero{position:relative!important;isolation:isolate;background:#102b37!important;overflow:hidden}
-.stories-photo-hero::before{content:"";position:absolute;inset:0;z-index:0;background:url("/assets/stories-iron-it-out-team.jpeg") center 43%/cover no-repeat;opacity:.65}
+.stories-photo-hero::before{content:"";position:absolute;inset:0;z-index:0;background:url("/assets/stories-iron-it-out-team") center 43%/cover no-repeat;opacity:.65}
 .stories-photo-hero::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(5,22,33,.90) 0%,rgba(5,22,33,.77) 43%,rgba(5,22,33,.46) 100%)}
 .stories-photo-hero>.hero-grid{position:relative;z-index:1}
 .stories-photo-hero .hero-copy h1,.stories-photo-hero .hero-copy p,.stories-photo-hero .hero-copy .eyebrow{color:#f4fbfd!important}
