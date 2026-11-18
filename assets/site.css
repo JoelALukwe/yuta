@@ -243,17 +243,21 @@
 @media(prefers-reduced-motion:reduce){.people-preview-grid .person-preview-photo img,.people-preview-grid .person-preview-photo::after{transition:none!important;transform:none!important}}
 
 
-/* Reference-matched homepage team cards — light frosted portraits, not dark overlays. */
-.people-preview-grid .person-preview-card{background:#f8fcfd!important;border:1px solid #d9e8ed!important;box-shadow:0 12px 34px rgba(29,68,81,.07);min-height:228px!important;transition:border-color .35s ease,box-shadow .35s ease}
-.people-preview-grid .person-preview-card:hover,.people-preview-grid .person-preview-card:focus-within{border-color:#0fa3af!important;box-shadow:0 16px 38px rgba(23,115,122,.16)}
-.people-preview-grid .person-preview-photo{inset:0!important;z-index:0!important}
-.people-preview-grid .person-preview-photo img{object-fit:cover!important;object-position:center 24%!important;opacity:.35!important;filter:saturate(.65) blur(.8px)!important;transform:scale(1.01)!important}
-.people-preview-grid .person-preview-photo::after{background:linear-gradient(90deg,rgba(255,255,255,.99) 0%,rgba(255,255,255,.95) 37%,rgba(245,252,253,.68) 67%,rgba(235,248,249,.34) 100%),linear-gradient(135deg,rgba(97,198,193,.08),rgba(207,122,128,.08))!important;opacity:1!important}
-.people-preview-grid .person-preview-copy{color:#123047!important;min-height:228px!important;justify-content:flex-start!important;padding:32px 24px!important;text-shadow:none!important}
-.people-preview-grid .person-preview-copy h3{color:#0d2c43!important;font-size:1.03rem}
-.people-preview-grid .person-preview-copy p{color:#52708a!important}
-.people-preview-grid .person-preview-copy .text-link{color:#008f99!important;margin-top:8px!important}
-.people-preview-grid .person-preview-card:hover .person-preview-photo img,.people-preview-grid .person-preview-card:focus-within .person-preview-photo img{opacity:.9!important;filter:none!important;transform:scale(1.05)!important}
-.people-preview-grid .person-preview-card:hover .person-preview-photo::after,.people-preview-grid .person-preview-card:focus-within .person-preview-photo::after{opacity:.45!important}
-.people-preview-grid .person-preview-card:hover .person-preview-copy,.people-preview-grid .person-preview-card:focus-within .person-preview-copy{text-shadow:none!important}
-@media(hover:none){.people-preview-grid .person-preview-photo img{opacity:.45!important;filter:saturate(.8)!important}.people-preview-grid .person-preview-photo::after{opacity:1!important}}
+
+/* Approved rectangular team reveal: wide cards, blurred tinted portraits at rest,
+   clear portraits on hover. Scoped ONLY to homepage preview. */
+.people-preview-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:20px!important}
+.people-preview-grid .person-preview-card{position:relative!important;display:block!important;min-height:250px!important;aspect-ratio:2.05/1!important;overflow:hidden!important;isolation:isolate!important;border-radius:18px!important;background:#173441!important;border:1px solid rgba(109,204,203,.28)!important;box-shadow:0 12px 28px rgba(2,24,34,.12)!important;transition:transform .45s ease,border-color .45s ease,box-shadow .45s ease!important}
+.people-preview-grid .person-preview-photo{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;z-index:0!important;background:#173441!important}
+.people-preview-grid .person-preview-photo img{display:block!important;width:100%!important;height:100%!important;aspect-ratio:auto!important;object-fit:cover!important;object-position:center 27%!important;opacity:.68!important;filter:blur(5px) saturate(.7)!important;transform:scale(1.07)!important;transition:filter .6s ease,opacity .6s ease,transform .75s ease!important}
+.people-preview-grid .person-preview-photo::after{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(90deg,rgba(8,37,49,.93) 0%,rgba(11,53,62,.74) 45%,rgba(14,79,82,.35) 100%),linear-gradient(135deg,rgba(96,204,200,.24),rgba(206,113,126,.16))!important;opacity:1!important;transition:opacity .6s ease!important;pointer-events:none!important}
+.people-preview-grid .person-preview-copy{position:relative!important;z-index:1!important;pointer-events:none!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:flex-start!important;gap:12px!important;min-height:250px!important;height:100%!important;box-sizing:border-box!important;padding:28px 32px!important;background:transparent!important;color:#fff!important;text-shadow:0 1px 5px rgba(0,0,0,.25)!important}
+.people-preview-grid .person-preview-copy h3{font-size:1.16rem!important;line-height:1.35!important;color:#fff!important;margin:0!important}
+.people-preview-grid .person-preview-copy p{color:#d7eff1!important;max-width:75%!important;margin:0!important}
+.people-preview-grid .person-preview-copy .text-link{pointer-events:auto!important;color:#82e2db!important;margin:8px 0 0!important}
+.people-preview-grid .person-preview-card:hover,.people-preview-grid .person-preview-card:focus-within{transform:translateY(-5px)!important;border-color:#70d3ce!important;box-shadow:0 20px 42px rgba(3,35,46,.25)!important}
+.people-preview-grid .person-preview-card:hover .person-preview-photo img,.people-preview-grid .person-preview-card:focus-within .person-preview-photo img{filter:blur(0) saturate(1.05)!important;opacity:1!important;transform:scale(1.01)!important}
+.people-preview-grid .person-preview-card:hover .person-preview-photo::after,.people-preview-grid .person-preview-card:focus-within .person-preview-photo::after{opacity:.58!important}
+@media(max-width:760px){.people-preview-grid{grid-template-columns:1fr!important}.people-preview-grid .person-preview-card{aspect-ratio:1.8/1!important;min-height:240px!important}.people-preview-grid .person-preview-copy{min-height:240px!important;padding:24px!important}}
+@media(hover:none){.people-preview-grid .person-preview-photo img{filter:blur(1.5px) saturate(.85)!important;opacity:.9!important}.people-preview-grid .person-preview-photo::after{opacity:.8!important}}
+@media(prefers-reduced-motion:reduce){.people-preview-grid .person-preview-card,.people-preview-grid .person-preview-photo img,.people-preview-grid .person-preview-photo::after{transition:none!important}}
