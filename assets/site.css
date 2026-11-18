@@ -407,3 +407,37 @@ body.iron-campaign{--iron-red:#f02222;--iron-navy:#063f75;--iron-blue:#64b9f2;--
 @media(max-width:980px){.iron-hero-inner{grid-template-columns:1fr}.iron-hero-copy{padding:55px 7vw}.iron-hero-visual{min-height:440px}.iron-visual-disc{width:300px}.iron-brand-lockup{font-size:clamp(5.5rem,14vw,8rem)}.iron-visual-disc span{font-size:4rem}}
 @media(max-width:580px){.iron-hero-copy{padding:48px 22px}.iron-kicker{font-size:.58rem!important}.iron-brand-lockup{font-size:clamp(5rem,20vw,7rem);margin:38px 0}.iron-hero-visual{min-height:360px}.iron-visual-disc{width:230px}.iron-visual-disc span{font-size:3rem}.iron-float{font-size:.5rem;padding:9px 11px}.iron-float-top{top:12%}.iron-float-bottom{bottom:15%}.iron-hero-foot{gap:12px}}
 @media(prefers-reduced-motion:reduce){.iron-visual-disc{transition:none}}
+
+/* IRON IT OUT / FULL-PAGE RED · NAVY · SKY CAMPAIGN PALETTE */
+body.iron-campaign{--iron-red:#f3222d;--iron-navy:#073f79;--iron-sky:#72c9ff;--iron-ink:#071e3b;--iron-pale:#e8f6ff;--accent:#f3222d;--color-accent:#f3222d}
+body.iron-campaign main{background:#071e3b}
+body.iron-campaign main>.section{background:#081f3e!important;color:#eaf6ff!important;position:relative;border-top:5px solid #f3222d}
+body.iron-campaign main>.section:nth-of-type(3n){background:linear-gradient(125deg,#073f79,#0a67aa)!important;border-top-color:#72c9ff}
+body.iron-campaign main>.section:nth-of-type(3n + 1){background:#e8f6ff!important;color:#08264a!important;border-top-color:#f3222d}
+body.iron-campaign main>.section:nth-of-type(3n + 1) h2,body.iron-campaign main>.section:nth-of-type(3n + 1) h3{color:#073f79!important}
+body.iron-campaign main>.section:nth-of-type(3n + 1) p{color:#214b6b!important}
+body.iron-campaign main>.section h2{color:inherit!important;letter-spacing:-.035em}
+body.iron-campaign main>.section .section-heading>.eyebrow{color:#ff737c!important;font-weight:900;letter-spacing:.18em}
+body.iron-campaign main>.section:nth-of-type(3n + 1) .section-heading>.eyebrow{color:#dd1e30!important}
+body.iron-campaign main>.section .card{background:#0d3a69!important;border:1px solid #4698cf!important;border-top:5px solid #f3222d!important;color:#fff!important;box-shadow:0 15px 38px #0002;transition:transform .25s,border-color .25s,box-shadow .25s}
+body.iron-campaign main>.section .card:nth-child(3n + 2){border-top-color:#72c9ff!important}
+body.iron-campaign main>.section .card:nth-child(3n){border-top-color:#f3222d!important}
+body.iron-campaign main>.section .card:hover{transform:translateY(-8px);box-shadow:0 22px 45px #001b3960;border-color:#72c9ff!important}
+body.iron-campaign main>.section .card h3{color:#fff!important}
+body.iron-campaign main>.section .card p{color:#d5eaff!important}
+body.iron-campaign main>.section .card-icon{background:#f3222d!important;color:#fff!important}
+body.iron-campaign main>.section .card:nth-child(even) .card-icon{background:#72c9ff!important;color:#073f79!important}
+body.iron-campaign main>.section .profile-feature{background:#0c3158!important;border:1px solid #3b83b9!important;border-left:6px solid #f3222d!important;color:#f2f8ff!important}
+body.iron-campaign main>.section .profile-feature h3{color:#fff!important}
+body.iron-campaign main>.section .profile-feature p{color:#d5eaff!important}
+body.iron-campaign main>.section .profile-feature .role{color:#72c9ff!important}
+body.iron-campaign main>.section .btn{background:#f3222d!important;border-color:#f3222d!important;color:#fff!important}
+body.iron-campaign main>.section .btn:hover{background:#c81527!important}
+body.iron-campaign main>.section .media-tile{background:#0a477f!important;border:1px solid #72c9ff!important;color:#fff!important}
+body.iron-campaign main>.section .media-tile strong{color:#fff!important}
+body.iron-campaign main>.section .media-tile span{color:#c6e8ff!important}
+body.iron-campaign .iron-hero{border-top:0!important}
+body.iron-campaign .iron-brand-lockup .iron-brand-red{color:#f3222d!important}
+body.iron-campaign .iron-brand-lockup .iron-brand-navy{color:#258fd8!important}
+body.iron-campaign .iron-brand-lockup .iron-brand-sky{color:#72c9ff!important}
+@media(prefers-reduced-motion:reduce){body.iron-campaign main>.section .card{transition:none}}
