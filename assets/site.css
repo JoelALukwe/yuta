@@ -176,3 +176,13 @@
 .partners-photo-hero .art-node{background:rgba(13,33,45,.82);color:#fff;border-color:rgba(255,255,255,.24)}
 .partners-photo-hero .art-label{color:#d7e9ee}
 @media(max-width:700px){.partners-photo-hero::before{background-position:56% center}.partners-photo-hero::after{background:rgba(5,22,33,.78)}}
+
+
+/* Founding leadership: equal-height, equal-width photographic portraits */
+.team-grid>.person{min-width:0;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--border-subtle);border-radius:18px;background:var(--bg-surface)}
+.team-grid>.person>img{display:block;width:100%;height:auto;aspect-ratio:4/4.5;object-fit:cover;object-position:center 28%;flex:none}
+.team-grid>.person .person-info{padding:22px;flex:1}
+.team-grid>.person .person-info h3{margin:5px 0 10px;overflow-wrap:anywhere}
+.team-grid>.person .person-info .role{font-weight:650;color:var(--accent-primary)}
+@media(max-width:800px){.team-grid>.person>img{aspect-ratio:4/4;object-position:center 25%}}
+@media(max-width:560px){.team-grid>.person>img{aspect-ratio:4/4.2}}
