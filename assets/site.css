@@ -89,3 +89,15 @@
 .smartpath-card-art svg{height:110px;width:145px;max-width:100%;filter:drop-shadow(0 9px 15px rgba(13,125,127,.12));transition:transform .4s ease,opacity .4s ease}
 .smartpath-illustrated-card:hover .smartpath-card-art svg{transform:translateY(-5px) scale(1.045);opacity:1}
 @media(prefers-reduced-motion:reduce){.smartpath-illustrated-card,.smartpath-card-art svg{transition:none!important}}
+
+/* Stories & Media: approved field-team photograph with translucent overlay */
+.stories-photo-hero{position:relative!important;isolation:isolate;background:#102b37!important;overflow:hidden}
+.stories-photo-hero::before{content:"";position:absolute;inset:0;z-index:0;background:url("/assets/stories-iron-it-out-team.jpeg") center 43%/cover no-repeat;opacity:.65}
+.stories-photo-hero::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(5,22,33,.90) 0%,rgba(5,22,33,.77) 43%,rgba(5,22,33,.46) 100%)}
+.stories-photo-hero>.hero-grid{position:relative;z-index:1}
+.stories-photo-hero .hero-copy h1,.stories-photo-hero .hero-copy p,.stories-photo-hero .hero-copy .eyebrow{color:#f4fbfd!important}
+.stories-photo-hero .hero-copy h1 em{color:#80d7d3!important}
+.stories-photo-hero .hero-art{background:rgba(10,29,40,.26);border-color:rgba(255,255,255,.23);backdrop-filter:blur(3px)}
+.stories-photo-hero .art-node{background:rgba(13,33,45,.82);color:#fff;border-color:rgba(255,255,255,.24)}
+.stories-photo-hero .art-label{color:#d7e9ee}
+@media(max-width:700px){.stories-photo-hero::before{background-position:58% center}.stories-photo-hero::after{background:rgba(5,22,33,.74)}}
