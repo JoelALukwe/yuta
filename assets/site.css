@@ -241,3 +241,19 @@
 [data-cms-partners]>.card:hover .partner-logo,[data-cms-partners]>.card:focus-within .partner-logo{background:transparent!important;box-shadow:none!important;filter:none;opacity:1;transform:scale(1.045)}
 @media(hover:none){.people-preview-grid .person-preview-photo img{filter:none;opacity:.65}.people-preview-grid .person-preview-photo::after{opacity:.8}[data-cms-partners] .partner-logo{filter:none;opacity:1}}
 @media(prefers-reduced-motion:reduce){.people-preview-grid .person-preview-photo img,.people-preview-grid .person-preview-photo::after{transition:none!important;transform:none!important}}
+
+
+/* Reference-matched homepage team cards — light frosted portraits, not dark overlays. */
+.people-preview-grid .person-preview-card{background:#f8fcfd!important;border:1px solid #d9e8ed!important;box-shadow:0 12px 34px rgba(29,68,81,.07);min-height:228px!important;transition:border-color .35s ease,box-shadow .35s ease}
+.people-preview-grid .person-preview-card:hover,.people-preview-grid .person-preview-card:focus-within{border-color:#0fa3af!important;box-shadow:0 16px 38px rgba(23,115,122,.16)}
+.people-preview-grid .person-preview-photo{inset:0!important;z-index:0!important}
+.people-preview-grid .person-preview-photo img{object-fit:cover!important;object-position:center 24%!important;opacity:.35!important;filter:saturate(.65) blur(.8px)!important;transform:scale(1.01)!important}
+.people-preview-grid .person-preview-photo::after{background:linear-gradient(90deg,rgba(255,255,255,.99) 0%,rgba(255,255,255,.95) 37%,rgba(245,252,253,.68) 67%,rgba(235,248,249,.34) 100%),linear-gradient(135deg,rgba(97,198,193,.08),rgba(207,122,128,.08))!important;opacity:1!important}
+.people-preview-grid .person-preview-copy{color:#123047!important;min-height:228px!important;justify-content:flex-start!important;padding:32px 24px!important;text-shadow:none!important}
+.people-preview-grid .person-preview-copy h3{color:#0d2c43!important;font-size:1.03rem}
+.people-preview-grid .person-preview-copy p{color:#52708a!important}
+.people-preview-grid .person-preview-copy .text-link{color:#008f99!important;margin-top:8px!important}
+.people-preview-grid .person-preview-card:hover .person-preview-photo img,.people-preview-grid .person-preview-card:focus-within .person-preview-photo img{opacity:.9!important;filter:none!important;transform:scale(1.05)!important}
+.people-preview-grid .person-preview-card:hover .person-preview-photo::after,.people-preview-grid .person-preview-card:focus-within .person-preview-photo::after{opacity:.45!important}
+.people-preview-grid .person-preview-card:hover .person-preview-copy,.people-preview-grid .person-preview-card:focus-within .person-preview-copy{text-shadow:none!important}
+@media(hover:none){.people-preview-grid .person-preview-photo img{opacity:.45!important;filter:saturate(.8)!important}.people-preview-grid .person-preview-photo::after{opacity:1!important}}
