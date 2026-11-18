@@ -101,3 +101,15 @@
 .stories-photo-hero .art-node{background:rgba(13,33,45,.82);color:#fff;border-color:rgba(255,255,255,.24)}
 .stories-photo-hero .art-label{color:#d7e9ee}
 @media(max-width:700px){.stories-photo-hero::before{background-position:58% center}.stories-photo-hero::after{background:rgba(5,22,33,.74)}}
+
+/* Where We Work hero — translucent community activity photograph */
+.work-photo-hero{position:relative!important;isolation:isolate;overflow:hidden;background:#102b37!important}
+.work-photo-hero::before{content:"";position:absolute;inset:0;z-index:0;background:url("/assets/where-we-work-community.jpeg") center 48%/cover no-repeat;opacity:.7}
+.work-photo-hero::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(5,22,33,.91),rgba(5,22,33,.77) 44%,rgba(5,22,33,.45))}
+.work-photo-hero>.hero-grid{position:relative;z-index:1}
+.work-photo-hero .hero-copy h1,.work-photo-hero .hero-copy p,.work-photo-hero .hero-copy .eyebrow{color:#f4fbfd!important}
+.work-photo-hero .hero-copy h1 em{color:#80d7d3!important}
+.work-photo-hero .hero-art{background:rgba(10,29,40,.25);border-color:rgba(255,255,255,.23);backdrop-filter:blur(3px)}
+.work-photo-hero .art-node{background:rgba(13,33,45,.82);color:#fff;border-color:rgba(255,255,255,.24)}
+.work-photo-hero .art-label{color:#d7e9ee}
+@media(max-width:700px){.work-photo-hero::before{background-position:57% center}.work-photo-hero::after{background:rgba(5,22,33,.76)}}
