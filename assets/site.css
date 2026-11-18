@@ -104,7 +104,7 @@
 
 /* Where We Work hero — translucent community activity photograph */
 .work-photo-hero{position:relative!important;isolation:isolate;overflow:hidden;background:#102b37!important}
-.work-photo-hero::before{content:"";position:absolute;inset:0;z-index:0;background:url("/assets/where-we-work-community.jpeg") center 48%/cover no-repeat;opacity:.7}
+.work-photo-hero::before{content:"";position:absolute;inset:0;z-index:0;background:url("/assets/where-we-work-community") center 48%/cover no-repeat;opacity:.7}
 .work-photo-hero::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(5,22,33,.91),rgba(5,22,33,.77) 44%,rgba(5,22,33,.45))}
 .work-photo-hero>.hero-grid{position:relative;z-index:1}
 .work-photo-hero .hero-copy h1,.work-photo-hero .hero-copy p,.work-photo-hero .hero-copy .eyebrow{color:#f4fbfd!important}
