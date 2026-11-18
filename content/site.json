@@ -143,24 +143,24 @@
     },
     {
       "name": "Kawangware, Nairobi",
-      "status": "exploratory",
+      "status": "planned",
       "lat": -1.283,
       "lon": 36.752,
-      "description": "Exploratory school and community engagement for Iron It Out."
+      "description": "Planned school and community engagement for Iron It Out."
     },
     {
       "name": "Kisumu / Nyanza",
       "status": "planned",
       "lat": -0.1,
       "lon": 34.75,
-      "description": "Potential future expansion; no completed implementation claimed."
+      "description": "Planned future expansion; no completed implementation claimed."
     },
     {
       "name": "Mombasa / Coast",
       "status": "planned",
       "lat": -4.043,
       "lon": 39.668,
-      "description": "Potential future expansion; no completed implementation claimed."
+      "description": "Planned future expansion; no completed implementation claimed."
     },
     {
       "name": "Stellenbosch",
@@ -168,6 +168,20 @@
       "lat": -33.933,
       "lon": 18.861,
       "description": "Development origin linked to the African STARS programme."
+    },
+    {
+      "name": "Sierra Leone (country-level)",
+      "status": "exploratory",
+      "lat": 8.46,
+      "lon": -11.78,
+      "description": "Exploratory country-level opportunity; no operational site or local implementation is claimed."
+    },
+    {
+      "name": "Nigeria (country-level)",
+      "status": "exploratory",
+      "lat": 9.08,
+      "lon": 8.68,
+      "description": "Exploratory country-level opportunity; no operational site or local implementation is claimed."
     }
   ],
   "gallery": [
@@ -178,8 +192,8 @@
     },
     {
       "url": "/assets/african-stars-community-group",
-      "alt": "African STARS community and programme participants in a group photograph",
-      "caption": "African STARS community gathering"
+      "alt": "Participants at an African STARS roundtable discussion",
+      "caption": "African STARS roundtable discussion"
     },
     {
       "url": "/assets/where-we-work-community",
