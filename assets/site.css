@@ -221,3 +221,23 @@
 [data-cms-partners]>.card:hover .partner-logo,[data-cms-partners]>.card:focus-within .partner-logo{filter:none;opacity:1;transform:scale(1.025);box-shadow:0 10px 24px rgba(0,35,43,.15)}
 @media(hover:none){.person-preview-photo img,[data-cms-partners] .partner-logo{filter:none;opacity:1;transform:none}.person-preview-photo::after{opacity:.16}}
 @media(prefers-reduced-motion:reduce){.person-preview-card,[data-cms-partners]>.card,.person-preview-photo img,.person-preview-photo::after,[data-cms-partners] .partner-logo{transition:none!important;transform:none!important}}
+
+
+/* Corrected original-style integrated team cards: photo behind copy, brand-tinted until hover.
+   The separate About founders portrait layout is intentionally not targeted. */
+.people-preview-grid .person-preview-card{position:relative;isolation:isolate;display:flex;min-height:245px;overflow:hidden;background:var(--bg-surface);border-radius:18px}
+.people-preview-grid .person-preview-photo{position:absolute;inset:0;z-index:0;width:100%;height:100%;background:transparent}
+.people-preview-grid .person-preview-photo img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:center 24%;opacity:.38;filter:saturate(.7) blur(1.2px);transform:scale(1.015);transition:filter .5s ease,opacity .5s ease,transform .6s ease}
+.people-preview-grid .person-preview-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,36,47,.92) 0%,rgba(12,49,58,.76) 54%,rgba(18,95,96,.4) 100%),linear-gradient(145deg,rgba(102,200,197,.26),rgba(211,114,123,.19));opacity:1;transition:opacity .5s ease}
+.people-preview-grid .person-preview-copy{position:relative;z-index:1;pointer-events:none;min-height:245px;padding:26px;justify-content:center;color:#f5fbfc}
+.people-preview-grid .person-preview-copy h3{color:#fff}
+.people-preview-grid .person-preview-copy p{color:#dceff0}
+.people-preview-grid .person-preview-copy .text-link{pointer-events:auto;color:#86e3dc}
+.people-preview-grid .person-preview-card:hover .person-preview-photo img,.people-preview-grid .person-preview-card:focus-within .person-preview-photo img{filter:none;opacity:1;transform:scale(1.055)}
+.people-preview-grid .person-preview-card:hover .person-preview-photo::after,.people-preview-grid .person-preview-card:focus-within .person-preview-photo::after{opacity:.52}
+.people-preview-grid .person-preview-card:hover .person-preview-copy,.people-preview-grid .person-preview-card:focus-within .person-preview-copy{text-shadow:0 1px 9px rgba(0,0,0,.8)}
+/* Partner logos must be displayed as uploaded, without an invented white tile. */
+[data-cms-partners] .partner-logo{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;object-fit:contain;object-position:left center;max-width:230px;filter:saturate(.75) opacity(.85);opacity:.9}
+[data-cms-partners]>.card:hover .partner-logo,[data-cms-partners]>.card:focus-within .partner-logo{background:transparent!important;box-shadow:none!important;filter:none;opacity:1;transform:scale(1.045)}
+@media(hover:none){.people-preview-grid .person-preview-photo img{filter:none;opacity:.65}.people-preview-grid .person-preview-photo::after{opacity:.8}[data-cms-partners] .partner-logo{filter:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.people-preview-grid .person-preview-photo img,.people-preview-grid .person-preview-photo::after{transition:none!important;transform:none!important}}
