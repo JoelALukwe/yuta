@@ -163,3 +163,16 @@
 .paths-photo-hero .art-node{background:rgba(13,33,45,.82);color:#fff;border-color:rgba(255,255,255,.24)}
 .paths-photo-hero .art-label{color:#d7e9ee}
 @media(max-width:700px){.paths-photo-hero::before{background-position:center center;background-size:auto 100%;opacity:.52}.paths-photo-hero::after{background:rgba(5,22,33,.78)}}
+
+
+/* Reconciliation: African STARS community photo, accessible foreground */
+.partners-photo-hero{position:relative!important;isolation:isolate;overflow:hidden;background:#102b37!important}
+.partners-photo-hero::before{content:"";position:absolute;inset:0;z-index:0;background:url("/assets/african-stars-community-group") center 42%/cover no-repeat;opacity:.8}
+.partners-photo-hero::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(5,22,33,.94),rgba(5,22,33,.78) 45%,rgba(5,22,33,.48))}
+.partners-photo-hero>.hero-grid{position:relative;z-index:1}
+.partners-photo-hero .hero-copy h1,.partners-photo-hero .hero-copy p,.partners-photo-hero .hero-copy .eyebrow{color:#f4fbfd!important}
+.partners-photo-hero .hero-copy h1 em{color:#80d7d3!important}
+.partners-photo-hero .hero-art{background:rgba(10,29,40,.26);border-color:rgba(255,255,255,.23);backdrop-filter:blur(3px)}
+.partners-photo-hero .art-node{background:rgba(13,33,45,.82);color:#fff;border-color:rgba(255,255,255,.24)}
+.partners-photo-hero .art-label{color:#d7e9ee}
+@media(max-width:700px){.partners-photo-hero::before{background-position:56% center}.partners-photo-hero::after{background:rgba(5,22,33,.78)}}
