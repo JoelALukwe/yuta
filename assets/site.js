@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   forms.forEach((form) => {
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      const statusEl = form.querySelector('.status');
+      const statusEl = form.querySelector('.status, #form-feedback, [role="status"]');
       const submitBtn = form.querySelector('button[type="submit"]');
       const formData = new FormData(form);
       const payload = Object.fromEntries(formData.entries());
