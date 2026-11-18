@@ -128,7 +128,7 @@
 
 /* Home hero: real community gathering photo with translucent brand overlay */
 .home-photo-hero{position:relative!important;isolation:isolate;overflow:hidden;background:#102b37!important}
-.home-photo-hero::before{content:"";position:absolute;inset:0;z-index:0;background-image:url("/assets/home-community-gathering.jpeg");background-position:center 52%;background-size:cover;background-repeat:no-repeat;opacity:.82}
+.home-photo-hero::before{content:"";position:absolute;inset:0;z-index:0;background-image:url("/assets/home-community-gathering");background-position:center 52%;background-size:cover;background-repeat:no-repeat;opacity:.82}
 .home-photo-hero::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(5,22,33,.94) 0%,rgba(5,22,33,.80) 44%,rgba(5,22,33,.46) 100%)}
 .home-photo-hero>.hero-grid{position:relative;z-index:1}
 .home-photo-hero .hero-copy h1,.home-photo-hero .hero-copy p,.home-photo-hero .hero-copy .eyebrow{color:#f4fbfd!important}
