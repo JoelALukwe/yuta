@@ -1,0 +1,19 @@
+(()=>{'use strict';
+const root=document.querySelector('#community-gallery');if(!root)return;
+const grid=root.querySelector('[data-cms-gallery]');if(!grid)return;
+const filters=root.querySelector('.gallery-filters');const counter=root.querySelector('.gallery-count');
+const modal=document.createElement('dialog');modal.className='sp-gallery-viewer';modal.setAttribute('aria-label','SmartPath photo viewer');
+modal.innerHTML='<div class="sp-viewer-top"><span class="sp-viewer-count" aria-live="polite"></span><button type="button" class="sp-viewer-close" aria-label="Close photo viewer">✕</button></div><button type="button" class="sp-viewer-arrow prev" aria-label="Previous photo">‹</button><figure><img alt=""><figcaption></figcaption></figure><button type="button" class="sp-viewer-arrow next" aria-label="Next photo">›</button>';document.body.append(modal);
+let active='all',shown=[],current=0,lastFocus=null;
+const category=(item)=>{const t=((item.querySelector('figcaption')?.textContent||'')+' '+(item.querySelector('img')?.alt||'')).toLowerCase();if(/team|leadership|people behind|programme shirt/.test(t))return 'people';if(/stars|gathering|community health gathering/.test(t))return 'community';return 'field';};
+function refresh(){const cards=[...grid.querySelectorAll('figure')];cards.forEach((c,i)=>{c.classList.add('sp-gallery-tile');c.dataset.category=category(c);c.dataset.index=i;c.tabIndex=0;c.setAttribute('role','button');c.setAttribute('aria-label','View photo: '+(c.querySelector('figcaption')?.textContent||'SmartPath image'));if(!c.querySelector('.sp-gallery-open')){const v=document.createElement('span');v.className='sp-gallery-open';v.textContent='View photograph ↗';c.append(v);}c.hidden=active!=='all'&&c.dataset.category!==active;});shown=cards.filter(c=>!c.hidden);if(counter)counter.textContent=shown.length+' photographs';filters?.querySelectorAll('button').forEach(b=>{const selected=b.dataset.filter===active;b.setAttribute('aria-pressed',String(selected));b.classList.toggle('is-active',selected);});}
+function show(i){if(!shown.length)return;current=(i+shown.length)%shown.length;const tile=shown[current];const src=tile.querySelector('img');const dest=modal.querySelector('figure img');dest.src=src.currentSrc||src.src;dest.alt=src.alt;modal.querySelector('figcaption').textContent=tile.querySelector('figcaption')?.textContent||src.alt;modal.querySelector('.sp-viewer-count').textContent=(current+1)+' / '+shown.length;}
+function open(tile){lastFocus=document.activeElement;const i=shown.indexOf(tile);if(i<0)return;show(i);if(!modal.open)modal.showModal();}
+grid.addEventListener('click',e=>{const tile=e.target.closest('figure');if(tile)open(tile);});grid.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.closest('figure')){e.preventDefault();open(e.target.closest('figure'));}});
+filters?.addEventListener('click',e=>{const b=e.target.closest('button[data-filter]');if(!b)return;active=b.dataset.filter;refresh();});
+modal.querySelector('.sp-viewer-close').addEventListener('click',()=>modal.close());modal.querySelector('.prev').addEventListener('click',()=>show(current-1));modal.querySelector('.next').addEventListener('click',()=>show(current+1));
+modal.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();show(current+1);}if(e.key==='ArrowLeft'){e.preventDefault();show(current-1);}});
+modal.addEventListener('click',e=>{if(e.target===modal)modal.close();});modal.addEventListener('close',()=>lastFocus?.focus?.());
+let touchX=null;modal.addEventListener('touchstart',e=>{touchX=e.changedTouches[0]?.screenX??null},{passive:true});modal.addEventListener('touchend',e=>{if(touchX===null)return;const d=(e.changedTouches[0]?.screenX??touchX)-touchX;if(Math.abs(d)>55)show(current+(d<0?1:-1));touchX=null},{passive:true});
+document.addEventListener('DOMContentLoaded',refresh);
+})();
