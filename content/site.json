@@ -154,7 +154,48 @@
       "description": "Development origin linked to the African STARS programme."
     }
   ],
-  "gallery": [],
+  "gallery": [
+    {
+      "url": "/assets/whole-team.jpg",
+      "alt": "SmartPath Iron It Out team together outdoors",
+      "caption": "Iron It Out programme team"
+    },
+    {
+      "url": "/assets/african-stars-community-group",
+      "alt": "African STARS community and programme participants in a group photograph",
+      "caption": "African STARS community gathering"
+    },
+    {
+      "url": "/assets/where-we-work-community",
+      "alt": "Community engagement and outreach activity",
+      "caption": "Community outreach and engagement"
+    },
+    {
+      "url": "/assets/impact-community-screening",
+      "alt": "SmartPath community screening tents and information banners",
+      "caption": "Community screening and awareness activities"
+    },
+    {
+      "url": "/assets/paths-iron-it-out-team",
+      "alt": "Five Iron It Out team members in programme shirts",
+      "caption": "Iron It Out field team"
+    },
+    {
+      "url": "/assets/our-model-community",
+      "alt": "Iron It Out outreach worker assisting a community participant",
+      "caption": "Community-based care entry points"
+    },
+    {
+      "url": "/assets/stories-iron-it-out-team",
+      "alt": "Two Iron It Out team members wearing programme shirts",
+      "caption": "People behind the programme"
+    },
+    {
+      "url": "/assets/home-community-gathering",
+      "alt": "Community members gathered at an outreach event",
+      "caption": "Community health gathering"
+    }
+  ],
   "ironGallery": [],
   "stories": [],
   "press": [],
