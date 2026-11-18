@@ -113,3 +113,15 @@
 .work-photo-hero .art-node{background:rgba(13,33,45,.82);color:#fff;border-color:rgba(255,255,255,.24)}
 .work-photo-hero .art-label{color:#d7e9ee}
 @media(max-width:700px){.work-photo-hero::before{background-position:57% center}.work-photo-hero::after{background:rgba(5,22,33,.76)}}
+
+/* Our Model: field outreach photo, layered teal scrim, accessible foreground */
+.model-photo-hero{position:relative!important;isolation:isolate;overflow:hidden;background:#102b37!important}
+.model-photo-hero::before{content:"";position:absolute;inset:0;z-index:0;background:url("/assets/our-model-community.jpeg") center 48%/cover no-repeat;opacity:.76}
+.model-photo-hero::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(5,22,33,.94) 0%,rgba(5,22,33,.82) 43%,rgba(5,22,33,.48) 100%)}
+.model-photo-hero>.hero-grid{position:relative;z-index:1}
+.model-photo-hero .hero-copy h1,.model-photo-hero .hero-copy p,.model-photo-hero .hero-copy .eyebrow{color:#f4fbfd!important}
+.model-photo-hero .hero-copy h1 em{color:#80d7d3!important}
+.model-photo-hero .hero-art{background:rgba(10,29,40,.27);border-color:rgba(255,255,255,.23);backdrop-filter:blur(3px)}
+.model-photo-hero .art-node{background:rgba(13,33,45,.82);color:#fff;border-color:rgba(255,255,255,.24)}
+.model-photo-hero .art-label{color:#d7e9ee}
+@media(max-width:700px){.model-photo-hero::before{background-position:58% center}.model-photo-hero::after{background:rgba(5,22,33,.76)}}
