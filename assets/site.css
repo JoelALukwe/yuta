@@ -205,3 +205,19 @@
 [data-cms-partners]>.card p{margin:0}
 @media(max-width:1050px){.people-preview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}[data-cms-partners]{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.people-preview-grid,[data-cms-partners]{grid-template-columns:minmax(0,1fr)}.person-preview-photo img{aspect-ratio:4/4;object-position:center 22%}}
+
+
+/* SmartPath branded photographic reveal — homepage team and partner cards.
+   Keep the approved About & Team founder portraits unchanged. */
+.person-preview-card,.people-preview-grid .card,[data-cms-partners]>.card{transition:transform .4s ease,border-color .4s ease,box-shadow .4s ease}
+.person-preview-card:hover,.person-preview-card:focus-within,[data-cms-partners]>.card:hover,[data-cms-partners]>.card:focus-within{transform:translateY(-5px);border-color:rgba(105,205,201,.58);box-shadow:0 16px 38px rgba(3,24,34,.22)}
+.person-preview-photo{position:relative;isolation:isolate;overflow:hidden;background:#123743}
+.person-preview-photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,rgba(15,121,127,.31),rgba(205,111,122,.21) 70%,rgba(16,43,54,.25));opacity:1;transition:opacity .5s ease}
+.person-preview-photo img{filter:saturate(.72) contrast(.94) blur(1.5px);opacity:.83;transform:scale(1.025);transition:filter .5s ease,opacity .5s ease,transform .65s ease}
+.person-preview-card:hover .person-preview-photo img,.person-preview-card:focus-within .person-preview-photo img{filter:none;opacity:1;transform:scale(1.065)}
+.person-preview-card:hover .person-preview-photo::after,.person-preview-card:focus-within .person-preview-photo::after{opacity:0}
+[data-cms-partners]>.card{position:relative;isolation:isolate;overflow:hidden}
+[data-cms-partners] .partner-logo{filter:saturate(.62) contrast(.93) blur(.8px);opacity:.78;transform:scale(.975);transition:filter .45s ease,opacity .45s ease,transform .5s ease,box-shadow .45s ease}
+[data-cms-partners]>.card:hover .partner-logo,[data-cms-partners]>.card:focus-within .partner-logo{filter:none;opacity:1;transform:scale(1.025);box-shadow:0 10px 24px rgba(0,35,43,.15)}
+@media(hover:none){.person-preview-photo img,[data-cms-partners] .partner-logo{filter:none;opacity:1;transform:none}.person-preview-photo::after{opacity:.16}}
+@media(prefers-reduced-motion:reduce){.person-preview-card,[data-cms-partners]>.card,.person-preview-photo img,.person-preview-photo::after,[data-cms-partners] .partner-logo{transition:none!important;transform:none!important}}
