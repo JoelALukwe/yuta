@@ -532,3 +532,9 @@ body.iron-campaign main>.section .btn{background:var(--accent)!important;border-
 .policy-contact h2{margin-top:0}.policy-contact p{margin-bottom:1.3rem}
 .iron-campaign-contact{font-size:.88rem!important;margin-top:1.5rem!important;color:#dceefa!important}
 .iron-campaign-contact a{color:#91dcff;text-decoration:underline;text-underline-offset:3px}
+
+/* Atlas isolation: no site image rules can alter Leaflet tiles inside iframe */
+#smartpath-map{height:500px;min-height:500px;width:100%;overflow:hidden;border-radius:18px;background:#dce9ec}
+#smartpath-map iframe{display:block;width:100%;height:100%;border:0;max-width:none;border-radius:18px}
+@media(max-width:850px){#smartpath-map{height:420px;min-height:420px}}
+@media(max-width:550px){#smartpath-map{height:350px;min-height:350px}}
