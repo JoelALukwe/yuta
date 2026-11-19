@@ -492,3 +492,47 @@ body.iron-campaign .iron-brand-lockup .iron-brand-sky{color:#72c9ff!important}
 @media(prefers-reduced-transparency:reduce){
   .smartpath-constellation .art-node{background:rgba(8,31,48,.88)!important}
 }
+
+/* Independent 3D orbital depth and proximity interaction */
+.smartpath-constellation.constellation-3d{transform-style:preserve-3d;perspective:1100px;overflow:visible!important}
+.smartpath-constellation.constellation-3d .art-node{
+  transform-origin:center;transition:box-shadow .2s ease,background .2s ease,opacity .2s ease;
+  will-change:transform;pointer-events:auto;
+  box-shadow:0 8px 20px rgba(0,0,0,.16),0 0 calc(23px * var(--node-glow,0)) var(--node-color)!important;
+}
+.smartpath-constellation.constellation-3d .art-orbit{position:relative;z-index:5;pointer-events:none}
+.smartpath-constellation.constellation-3d .art-node:focus-visible{outline:2px solid var(--node-color);outline-offset:5px}
+@media(prefers-reduced-motion:reduce){.smartpath-constellation.constellation-3d .art-node{will-change:auto}}
+
+/* Iron It Out: independently recognizable campaign identity, throughout the page */
+body.iron-campaign{
+  --iron-red:#f3222d;--iron-navy:#073f79;--iron-sky:#72c9ff;
+}
+body.iron-campaign .iron-hero{
+  background:radial-gradient(ellipse at 85% 20%,rgba(114,201,255,.28),transparent 45%),
+  linear-gradient(135deg,#06142f 0%,#073f79 63%,#075b9e 100%)!important;
+  color:#fff!important;overflow:hidden;
+}
+body.iron-campaign .iron-hero h1{color:#fff!important}
+body.iron-campaign .iron-hero h1 em{color:#72c9ff!important}
+body.iron-campaign .iron-kicker{color:#72c9ff!important}
+body.iron-campaign .iron-brand-lockup{
+  font-weight:1000;line-height:.83;letter-spacing:-.065em;
+  filter:drop-shadow(0 10px 16px rgba(0,0,0,.22));
+}
+body.iron-campaign .iron-brand-lockup .iron-brand-red{color:#f3222d!important}
+body.iron-campaign .iron-brand-lockup .iron-brand-navy{color:#fff!important;text-shadow:3px 3px 0 #073f79,-2px -2px 0 #72c9ff}
+body.iron-campaign .iron-brand-lockup .iron-brand-sky{color:#72c9ff!important}
+body.iron-campaign .iron-hero-visual{
+  background:radial-gradient(circle at 50% 50%,rgba(114,201,255,.22),transparent 60%)!important;
+}
+body.iron-campaign .iron-visual-disc{
+  background:linear-gradient(145deg,#f3222d,#cf1125 55%,#073f79)!important;
+  border:8px solid #72c9ff!important;
+  box-shadow:0 0 0 18px rgba(114,201,255,.08),0 25px 75px rgba(0,0,0,.32)!important;
+}
+body.iron-campaign .iron-float{border-color:#72c9ff!important;box-shadow:0 8px 28px rgba(0,0,0,.2)}
+body.iron-campaign .iron-cta{background:#f3222d!important;color:#fff!important;border-color:#f3222d!important}
+body.iron-campaign main>.section:nth-of-type(3n + 1){background:#e8f6ff!important}
+body.iron-campaign main>.section:nth-of-type(3n + 2){background:#071e3b!important}
+body.iron-campaign main>.section:nth-of-type(3n){background:linear-gradient(135deg,#073f79,#0b68a9)!important}
