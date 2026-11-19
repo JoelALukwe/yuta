@@ -573,3 +573,10 @@ body.iron-campaign main>.section .btn{background:var(--accent)!important;border-
 .site-footer .brand,.footer-brand .brand{align-items:center;gap:14px}
 @media(max-width:1100px){.site-header .brand img{width:62px!important;height:62px!important;max-width:62px!important;max-height:62px!important}}
 @media(max-width:650px){.site-header .brand img{width:56px!important;height:56px!important;max-width:56px!important;max-height:56px!important}.site-header .header-inner{min-height:76px}.site-footer .brand img,.site-footer .footer-brand img,.footer-brand .brand img{width:70px!important;height:70px!important;max-width:70px!important;max-height:70px!important}}
+
+/* Final SmartPath lockup visibility refinement */
+.site-header .brand img{width:82px!important;height:82px!important;max-width:82px!important;max-height:82px!important}
+.site-header .header-inner{min-height:98px}
+.site-footer .brand img,.site-footer .footer-brand img,.footer-brand .brand img{width:96px!important;height:96px!important;max-width:96px!important;max-height:96px!important}
+@media(max-width:1100px){.site-header .brand img{width:68px!important;height:68px!important;max-width:68px!important;max-height:68px!important}}
+@media(max-width:650px){.site-header .brand img{width:60px!important;height:60px!important;max-width:60px!important;max-height:60px!important}.site-header .header-inner{min-height:80px}.site-footer .brand img,.site-footer .footer-brand img,.footer-brand .brand img{width:76px!important;height:76px!important;max-width:76px!important;max-height:76px!important}}
