@@ -564,3 +564,12 @@ body.iron-campaign main>.section .btn{background:var(--accent)!important;border-
 :root:not([data-theme=dark]) .site-header .brand small,
 :root:not([data-theme=dark]) .footer .brand small,
 :root:not([data-theme=dark]) .site-footer .brand small{color:#40576b}
+
+/* Larger, fully visible SmartPath identity: preserve intrinsic image proportions */
+.site-header .brand img{width:72px!important;height:72px!important;max-width:72px!important;max-height:72px!important;object-fit:contain!important;object-position:center!important;flex-shrink:0}
+.site-header .brand{gap:12px;align-items:center}
+.site-header .header-inner{min-height:90px}
+.site-footer .brand img,.site-footer .footer-brand img,.footer-brand .brand img{width:84px!important;height:84px!important;max-width:84px!important;max-height:84px!important;object-fit:contain!important;flex-shrink:0}
+.site-footer .brand,.footer-brand .brand{align-items:center;gap:14px}
+@media(max-width:1100px){.site-header .brand img{width:62px!important;height:62px!important;max-width:62px!important;max-height:62px!important}}
+@media(max-width:650px){.site-header .brand img{width:56px!important;height:56px!important;max-width:56px!important;max-height:56px!important}.site-header .header-inner{min-height:76px}.site-footer .brand img,.site-footer .footer-brand img,.footer-brand .brand img{width:70px!important;height:70px!important;max-width:70px!important;max-height:70px!important}}
