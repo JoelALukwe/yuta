@@ -538,3 +538,29 @@ body.iron-campaign main>.section .btn{background:var(--accent)!important;border-
 #smartpath-map iframe{display:block;width:100%;height:100%;border:0;max-width:none;border-radius:18px}
 @media(max-width:850px){#smartpath-map{height:420px;min-height:420px}}
 @media(max-width:550px){#smartpath-map{height:350px;min-height:350px}}
+
+/* 2026-11-19: Brand lockup sizing and light-mode legibility */
+.site-header .brand,.footer .brand,.site-footer .brand{display:inline-flex;align-items:center;gap:12px;vertical-align:middle;line-height:1.1}
+.site-header .brand img,.footer .brand img,.site-footer .brand img,.footer-brand img,.footer-brand .brand img{
+  display:block;flex:0 0 auto;width:57px;height:57px;max-width:57px;max-height:57px;
+  object-fit:contain;object-position:center;
+}
+.site-header .brand>span,.footer .brand>span,.site-footer .brand>span{display:flex;flex-direction:column;justify-content:center;min-width:0}
+.site-header .brand small,.footer .brand small,.site-footer .brand small{line-height:1.35;margin-top:4px}
+@media(max-width:1100px){.site-header .brand img{width:50px;height:50px;max-width:50px;max-height:50px}.site-header .brand{gap:8px}}
+@media(max-width:650px){.site-header .brand img{width:48px;height:48px;max-width:48px;max-height:48px}.footer .brand img,.site-footer .brand img,.footer-brand img{width:54px;height:54px;max-width:54px;max-height:54px}}
+/* The main light palette uses dark ink, not pale captions on pale surfaces. */
+:root:not([data-theme=dark]){--text-primary:#142c40;--text-secondary:#40576b;--accent-primary:#006f79;--accent-hover:#005e66}
+:root:not([data-theme=dark]) .site-nav a:not(.active):not(:hover){color:#40576b}
+:root:not([data-theme=dark]) .footer-note,
+:root:not([data-theme=dark]) .muted,
+:root:not([data-theme=dark]) .section-heading>p,
+:root:not([data-theme=dark]) .map-guide p,
+:root:not([data-theme=dark]) .location-card p,
+:root:not([data-theme=dark]) .policy-section p{color:#40576b}
+:root:not([data-theme=dark]) .eyebrow{color:#006f79}
+:root:not([data-theme=dark]) .filter-btn:not(.active){color:#284357}
+:root:not([data-theme=dark]) .map-key span{color:#24465a}
+:root:not([data-theme=dark]) .site-header .brand small,
+:root:not([data-theme=dark]) .footer .brand small,
+:root:not([data-theme=dark]) .site-footer .brand small{color:#40576b}
