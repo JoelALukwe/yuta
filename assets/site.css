@@ -441,3 +441,16 @@ body.iron-campaign .iron-brand-lockup .iron-brand-red{color:#f3222d!important}
 body.iron-campaign .iron-brand-lockup .iron-brand-navy{color:#258fd8!important}
 body.iron-campaign .iron-brand-lockup .iron-brand-sky{color:#72c9ff!important}
 @media(prefers-reduced-motion:reduce){body.iron-campaign main>.section .card{transition:none}}
+
+/* Shared three-pillar SmartPath 3D constellation */
+.hero-art.smartpath-constellation{isolation:isolate;perspective:900px;transform-style:preserve-3d;overflow:visible;background:radial-gradient(circle at 48% 45%,rgba(0,165,169,.12),transparent 62%),radial-gradient(circle at 70% 75%,rgba(255,107,96,.10),transparent 45%),var(--bg-elevated);box-shadow:inset 0 0 45px rgba(0,165,169,.06),0 22px 65px rgba(0,0,0,.09)}
+.smartpath-constellation:before,.smartpath-constellation:after{content:"";position:absolute;inset:12%;border-radius:50%;border:1px solid rgba(0,165,169,.23);pointer-events:none;transform:rotateX(63deg) rotate(-24deg);box-shadow:0 0 20px rgba(0,165,169,.08)}
+.smartpath-constellation:after{inset:17%;border-color:rgba(255,107,96,.2);transform:rotateY(65deg) rotate(32deg)}
+.smartpath-constellation .art-orbit{width:42%;height:42%;border:1px solid rgba(0,165,169,.42);background:radial-gradient(circle,rgba(255,255,255,.13),rgba(0,165,169,.05));box-shadow:0 0 0 9px rgba(0,165,169,.04),0 15px 40px rgba(0,0,0,.15);backdrop-filter:blur(7px);transition:transform .45s ease,box-shadow .45s ease;transform:rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));z-index:4;overflow:hidden}
+.smartpath-constellation .art-orbit img{display:block;width:80%;height:80%;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(0,0,0,.16))}
+.smartpath-constellation:hover .art-orbit{box-shadow:0 0 0 12px rgba(0,165,169,.07),0 24px 60px rgba(0,0,0,.2)}
+.smartpath-constellation .art-node{position:absolute;margin:0;white-space:nowrap;min-width:95px;text-align:center;padding:11px 15px;border:1px solid var(--node-color);border-radius:999px;color:var(--text-primary);background:var(--bg-surface);box-shadow:0 8px 25px rgba(0,0,0,.13),inset 0 3px 0 var(--node-color);cursor:default;will-change:transform;transition:box-shadow .25s ease,background .25s ease;outline-offset:4px}
+.smartpath-constellation .art-node:hover,.smartpath-constellation .art-node:focus-visible{background:var(--bg-elevated);box-shadow:0 0 0 5px color-mix(in srgb,var(--node-color) 23%,transparent),0 18px 42px rgba(0,0,0,.25)}
+.smartpath-constellation .art-label{z-index:6;bottom:4%;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.smartpath-constellation .art-orbit,.smartpath-constellation .art-node{transition:none!important}}
+@media(max-width:600px){.smartpath-constellation .art-node{min-width:0;font-size:.69rem;padding:9px 11px}.smartpath-constellation .art-label{font-size:.6rem}}
