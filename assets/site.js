@@ -76,64 +76,69 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('a.smartpath-admin-entry').forEach(a=>{a.href='/admin.html';a.setAttribute('aria-label','Open SmartPath content administration');});});
 
-/* SmartPath connected-care constellation: shared across every hero-art instance. */
+/* Independent orbital motion: depth, proximity response and reduced-motion support. */
 document.addEventListener('DOMContentLoaded', () => {
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  document.querySelectorAll('.hero-art').forEach((art) => {
-    const nodes = [...art.querySelectorAll('.art-node')];
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  document.querySelectorAll('.hero-art').forEach(art => {
+    const nodes = Array.from(art.querySelectorAll('.art-node'));
     if (nodes.length !== 3 || art.dataset.constellationReady) return;
     art.dataset.constellationReady = 'true';
-    art.classList.add('smartpath-constellation');
-    art.setAttribute('aria-label', 'SmartPath connects Community, Science and Technology');
-    const center = art.querySelector('.art-orbit');
-    if (center) {
-      center.innerHTML = '<img src="/assets/logo.png" alt="SmartPath logo" loading="lazy">';
-    }
-    const colors = ['#00a5a9', '#ff6b60', '#415b6b'];
-    const names = ['Community', 'Science', 'Technology'];
-    nodes.forEach((node, i) => {
-      node.textContent = names[i];
-      node.style.setProperty('--node-color', colors[i]);
-      node.setAttribute('tabindex', '0');
-      node.setAttribute('aria-label', names[i] + ': connected care pillar');
+    art.classList.add('smartpath-constellation','constellation-3d');
+    art.setAttribute('role','group');
+    art.setAttribute('aria-label','SmartPath: Community, Science and Technology');
+    const center=art.querySelector('.art-orbit');
+    if(center) center.innerHTML='<img src="/assets/logo.png" alt="SmartPath logo" loading="lazy">';
+    const config=[
+      {name:'Community',color:'#00a5a9',speed:.24,phase:-1.45,rx:.36,ry:.23,tilt:-.25},
+      {name:'Science',color:'#ff6b60',speed:-.19,phase:.65,rx:.32,ry:.31,tilt:.65},
+      {name:'Technology',color:'#415b6b',speed:.16,phase:2.6,rx:.39,ry:.18,tilt:-.75}
+    ];
+    nodes.forEach((node,i)=>{
+      node.textContent=config[i].name;
+      node.style.setProperty('--node-color',config[i].color);
+      node.setAttribute('tabindex','0');
+      node.setAttribute('aria-label',config[i].name+' pillar');
     });
-    let phase = 0, last = 0, paused = false, tiltX = 0, tiltY = 0;
-    const position = () => {
-      const w = art.clientWidth, h = art.clientHeight;
-      const radius = Math.min(w, h) * 0.37;
-      nodes.forEach((node, i) => {
-        const angle = phase + i * Math.PI * 2 / 3 - Math.PI / 2;
-        const depth = Math.sin(angle + 0.5);
-        node.style.left = '50%';
-        node.style.top = '50%';
-        node.style.right = 'auto';
-        node.style.bottom = 'auto';
-        node.style.transform = 'translate(-50%, -50%) translate3d(' + (Math.cos(angle) * radius) + 'px,' + (Math.sin(angle) * radius * .77) + 'px,' + (depth * 32) + 'px) scale(' + (1 + depth * .08) + ')';
-        node.style.zIndex = String(Math.round(5 + depth * 3));
+    let last=0, elapsed=0, pointer=null, focused=-1, raf=0;
+    const draw=()=>{
+      const w=art.clientWidth,h=art.clientHeight;
+      const size=Math.min(w,h);
+      nodes.forEach((node,i)=>{
+        const c=config[i], angle=c.phase+elapsed*c.speed;
+        const x=Math.cos(angle)*size*c.rx;
+        const y=Math.sin(angle)*size*c.ry*Math.cos(c.tilt)+Math.cos(angle)*size*.07*Math.sin(c.tilt);
+        const depth=Math.sin(angle)*Math.cos(c.tilt);
+        const px=w/2+x,py=h/2+y;
+        const distance=pointer?Math.hypot(pointer.x-px,pointer.y-py):Infinity;
+        const proximity=Math.max(0,1-distance/145);
+        const active=focused===i?1:proximity;
+        const scale=(.89+(.17*(depth+1)/2))*(1+active*.42);
+        node.style.left='50%';node.style.top='50%';node.style.right='auto';node.style.bottom='auto';
+        node.style.transform='translate(-50%,-50%) translate3d('+x+'px,'+y+'px,'+(depth*75)+'px) scale('+scale+')';
+        node.style.zIndex=String(depth<-.16?2:depth>.2?9:6);
+        node.style.opacity=String(.83+Math.max(0,depth)*.17);
+        node.style.setProperty('--node-glow',String(active));
       });
-      art.style.setProperty('--tilt-x', tiltX + 'deg');
-      art.style.setProperty('--tilt-y', tiltY + 'deg');
+      if(center) center.style.zIndex='5';
     };
-    const frame = (now) => {
-      if (!document.documentElement.contains(art)) return;
-      if (!reduceMotion.matches && !paused && !document.hidden) phase += Math.min((now - (last || now)) / 1000, .05) * .24;
-      last = now;
-      position();
-      requestAnimationFrame(frame);
+    const frame=now=>{
+      if(!art.isConnected)return;
+      if(last&&!reduced.matches&&!document.hidden)elapsed+=Math.min((now-last)/1000,.05);
+      last=now;draw();raf=requestAnimationFrame(frame);
     };
-    art.addEventListener('pointermove', (event) => {
-      if (reduceMotion.matches) return;
-      const r = art.getBoundingClientRect();
-      tiltY = ((event.clientX - r.left) / r.width - .5) * 13;
-      tiltX = -((event.clientY - r.top) / r.height - .5) * 13;
+    art.addEventListener('pointermove',e=>{
+      const r=art.getBoundingClientRect();
+      pointer={x:e.clientX-r.left,y:e.clientY-r.top};
     });
-    art.addEventListener('pointerleave', () => { tiltX = 0; tiltY = 0; paused = false; });
-    nodes.forEach(node => {
-      node.addEventListener('pointerenter', () => { paused = true; });
-      node.addEventListener('pointerleave', () => { paused = false; });
-      node.addEventListener('focus', () => { paused = true; });
-      node.addEventListener('blur', () => { paused = false; });
+    art.addEventListener('pointerleave',()=>{pointer=null;});
+    nodes.forEach((node,i)=>{
+      node.addEventListener('focus',()=>{focused=i;});
+      node.addEventListener('blur',()=>{focused=-1;});
     });
-    requestAnimationFrame(frame);
+    const observer=new IntersectionObserver(entries=>{
+      if(entries[0].isIntersecting){if(!raf)raf=requestAnimationFrame(frame);}
+      else{cancelAnimationFrame(raf);raf=0;last=0;}
+    },{threshold:0});
+    observer.observe(art);
   });
 });
