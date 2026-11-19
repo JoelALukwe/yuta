@@ -517,3 +517,18 @@ body.iron-campaign main>.section .btn{background:var(--accent)!important;border-
 @media(max-width:900px){.iron-hero-layout{grid-template-columns:1fr;gap:0}.iron-hero-layout .iron-hero-copy{padding:48px 0 32px}.iron-campaign .iron-hero-photo{min-height:380px;border-radius:18px 18px 0 0}}
 @media(max-width:580px){body.iron-campaign .iron-identity{font-size:clamp(2.7rem,12vw,4.4rem)}body.iron-campaign .iron-hero-photo{min-height:310px}body.iron-campaign .iron-hero-copy{padding:40px 0 28px}}
 @media(prefers-reduced-motion:reduce){body.iron-campaign main>.section .card{transition:none}}
+
+/* Public information pages */
+.policy-container{max-width:860px;margin-inline:auto}
+.policy-hero{padding-bottom:2.2rem!important}
+.policy-hero h1{font-size:clamp(2.8rem,6vw,4.8rem);letter-spacing:-.055em;margin:.7rem 0}
+.policy-intro{font-size:1.15rem;max-width:720px;line-height:1.7}
+.policy-updated{font-size:.8rem;opacity:.75;margin-top:1.3rem}
+.policy-sections{display:grid;gap:1.6rem}
+.policy-section{border-bottom:1px solid var(--border-subtle);padding-bottom:1.5rem}
+.policy-section h2{font-size:clamp(1.2rem,2.5vw,1.55rem);margin:0 0 .65rem}
+.policy-section p{max-width:760px;line-height:1.8;margin:0;color:var(--text-secondary)}
+.policy-contact{padding:2rem;margin-top:2.5rem;background:var(--bg-elevated);border:1px solid var(--border-subtle);border-radius:1.2rem}
+.policy-contact h2{margin-top:0}.policy-contact p{margin-bottom:1.3rem}
+.iron-campaign-contact{font-size:.88rem!important;margin-top:1.5rem!important;color:#dceefa!important}
+.iron-campaign-contact a{color:#91dcff;text-decoration:underline;text-underline-offset:3px}
